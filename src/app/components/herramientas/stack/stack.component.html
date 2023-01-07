@@ -1,0 +1,32 @@
+
+
+
+
+
+<div class="skills">
+    <div class="window">
+        <div class="bar">
+        <div>
+            <h1>&lt; Mi Stack/&gt; </h1>
+        </div>
+         <div class="img">
+         <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png" alt="">
+         <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png" alt="">
+         <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="">
+
+         </div>
+         
+        </div>
+        <div class="icono">
+            <ul>
+                <li *ngFor="let skill of stack">
+                    {{skill.nombre}}
+                    <button type="submit" mat-button (click)="delete(skill.id)">borrar</button> 
+                    <button type="submit" mat-button (click)=" editar(skill)">editar</button>
+                 </li>
+            </ul>    
+        </div>
+        <a mat-button routerLink="add-skill"> agregar herr</a>
+    </div>
+
+   

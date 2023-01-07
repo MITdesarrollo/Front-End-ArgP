@@ -1,0 +1,19 @@
+
+
+<a mat-button routerLink="add-red"> agregar herr</a>
+
+<div class="row" *ngFor="let red of redes">
+    <div class="col-3">
+      <li>{{red.nombre}}</li>
+      <li>{{red.icono}}</li>
+
+    </div>
+    
+    <div class="col-1 p-0">
+        <!-- Button trigger modal --> 
+        
+        <button type="submit" class="btn btn-close-white" (click)="delete(red.id)">borrar<i class="fa-solid fa-trash-can"></i></button> 
+        <button type="submit" class="btn btn-close-white" (click)=" editar(red)">editar<i class="fa-solid fa-trash-can"></i></button>               
+    </div>
+    <br><hr class="col-11">
+  </div>

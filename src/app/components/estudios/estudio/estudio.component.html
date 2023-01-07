@@ -1,0 +1,35 @@
+
+ <div class="cont-estudios">
+   <div class="window">
+          <div class="bar">
+              <h2>&lt; MIS ESTUDIOS/&gt; </h2>
+              <div class="img-barra">
+              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png" alt="">
+              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png" alt="">
+              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="">
+              </div>
+          </div>
+          <div class="texto"  *ngFor="let estu of estudios">
+            <div class="icono">
+              <img [src]="estu.img" alt="img institucion">
+            </div>
+            <div class="edit-delete">
+              <button type="submit" class="btn btn-close-white" (click)="delete(estu.id)">borrar<i class="fa-solid fa-trash-can"></i></button> 
+              <button type="submit" class="btn btn-close-white" (click)=" editar(estu)">editar<i class="fa-solid fa-trash-can"></i></button> 
+            </div>
+              <div class="dato_estudios">
+                  <h2>Institución</h2>
+                  <h3>{{estu.institucion}}</h3>
+              
+              
+                  <h2>Titulo/Certificación</h2>
+                  <h3>{{estu.titulo}}</h3>
+              
+                  <h2>Duración</h2>
+                  <h3>{{estu.inicio}} / {{estu.fin}}</h3>
+
+            </div>
+          </div>
+      </div>
+</div>
+<a mat-button routerLink="add-estudio"> agregar estudio</a>

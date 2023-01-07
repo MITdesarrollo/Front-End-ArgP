@@ -1,0 +1,59 @@
+
+
+<form class="form"  [formGroup]="fomularioDatos" (ngSubmit)="editarDatos(datos)">
+  <div class="row">
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>apellido</mat-label>
+        <input matInput formControlName="apellido">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>descripcion</mat-label>
+        <input matInput formControlName="descripcion">
+      </mat-form-field>
+    </div>
+    
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>imagen</mat-label>
+        <input matInput formControlName="img">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>fecha nacimiento yyyy-mm-dd </mat-label>
+        <input matInput formControlName="nacimiento">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>titulo </mat-label>
+        <input matInput formControlName="titulo">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>link cv</mat-label>
+        <input matInput formControlName="curriculum">
+      </mat-form-field>
+    </div>
+    
+    <div class="col-md-12">
+      <button type="submit" mat-raised-button color="primary">Agregar</button>
+    </div>
+  </div> 
+  </form>

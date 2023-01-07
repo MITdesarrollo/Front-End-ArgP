@@ -1,0 +1,64 @@
+@use './src/app/app.component' as c;
+
+.grid-container-header {
+	background-color: c.$rosaClaro;
+	width: 100%;
+	top: 0;
+	align-items: center;
+}
+.left-header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+
+	.edit{
+		img{
+			width: 2.5rem;
+	    height: 2.5rem;
+	    &:hover {
+		transform: scale(1.3);
+		transition: all 0.3s ease;
+	    }
+		}
+	}
+}
+.log{
+  
+}
+.nombre_logo {
+	text-align: center;
+	color: c.$violetaFuerte;
+	font-size: 1rem;
+}
+.icono_arg {
+  padding: .5rem;
+	border-radius: 10px;
+	width: 5rem;
+	height: 5rem;
+}
+.accesos_componentes {
+	display: flex;
+	justify-content: space-around;
+}
+.right-header {
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.iconos {
+	height: 100%;
+	align-items: center;
+}
+.link_red {
+	padding: 0 1rem 0 1rem;
+}
+.img_red {
+	width: 2.5rem;
+	height: 2.5rem;
+	&:hover {
+		transform: scale(1.3);
+		transition: all 0.3s ease;
+	}
+}

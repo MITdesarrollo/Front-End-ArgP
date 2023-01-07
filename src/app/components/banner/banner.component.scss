@@ -1,0 +1,308 @@
+@use './src/app/app.component' as c;
+
+.container-main-a {
+  font-family: 'Courier Prime', monospace;
+  padding-bottom: 2em;
+  
+  width: 100%;
+  margin-top: 5rem;
+  .window {
+    padding: .5em;
+    background-color: rgb(173, 171, 182, 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    width: 80%;
+    height: 40%;
+
+    &__title {
+      background: c.$rosaFuerte;
+      padding: .5em;
+      border: 3px solid white;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 5px;
+
+      .title-left {
+        color: white;
+        width: 30%;
+      }
+
+      .title-mid {
+        justify-content: center;
+        width: 40%;
+      }
+
+      .title-right {
+        display: flex;
+        justify-content: flex-end;
+        width: 30%;
+
+        img {
+          margin-left: .5rem;
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+
+    &__menu {
+      padding: 1em;
+      font-size: 1.5rem;
+      color: white;
+
+
+      .line-letter {
+        border-bottom: 2px solid white;
+        margin-left: 2rem;
+      }
+    }
+
+    &__screen {
+      position: relative;
+      color: white;
+      border: 3px solid white;
+      border-radius: 5px;
+      background: c.$rosaClaro;
+      height: 80%;
+      width: 100%;
+
+      #scrollbar-style-x {
+        position: absolute;
+        content: '';
+        padding: 12px;
+        width: 100%;
+        bottom: 0;
+        background-color: white;
+      }
+
+      #scrollbar-style-x::before {
+        border-top: .125em solid c.$violetaFuerte;
+        border-right: .125em solid c.$violetaFuerte;
+        position: absolute;
+        content: '';
+        padding: .7em;
+        background: c.$violetaClaro;
+        bottom: 0;
+        width: 10%;
+        left: 0;
+      }
+
+      #scrollbar-style-y {
+        position: absolute;
+        content: '';
+        padding: .7em;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+
+      }
+
+      #scrollbar-style-y::before {
+        position: absolute;
+        padding: .7em;
+        height: 20%;
+        background: c.$violetaClaro;
+
+
+        top: 0;
+        right: 0;
+        border-left: .125em solid c.$violetaFuerte;
+        border-bottom: 2px solid c.$violetaFuerte;
+      }
+
+      #scrollbar-arrow-x {
+        img {
+          position: absolute;
+          bottom: .2rem;
+
+          left: 0;
+          width: 1rem;
+          height: 1rem;
+          transform: rotate(180deg);
+        }
+
+
+      }
+
+      #scrollbar-arrow-y {
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 1rem;
+          height: 1rem;
+          transform: rotate(-90deg);
+          margin-right: .24rem;
+        }
+
+      }
+
+      #scrollbar-corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        background-color: rgb(228, 225, 225);
+
+        img {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 1.43rem;
+          height: 1.43rem;
+        }
+      }
+
+      .screen-title {
+        font-size: 4rem;
+        padding: 1em 1em 1em 1em;
+
+        display: table;
+        padding-left: 2em;
+
+        h1 {
+          position: relative;
+          color: c.$azulClaro;
+          font-size: 6rem;
+          font-weight: bold !important;
+
+          span {
+            position: absolute;
+            right: 0;
+            width: 0;
+            background: c.$rosaClaro;
+            border-left: 1px solid;
+            animation: maquina 5s infinite alternate steps(13);
+
+          }
+        }
+
+        @keyframes maquina {
+          from {
+            width: 100%;
+          }
+
+          to {
+            width: 0;
+          }
+
+        }
+      }
+
+      .screen-name {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2em;
+
+        h1{
+          color: c.$rosaFuerte;
+        }
+
+        h3{
+          margin-top: 2rem;
+          color: c.$violetaFuerte;
+
+        }
+
+        #second-title {
+          font-size: 2rem;
+          padding-left: 6em;
+          margin-top: 3em;
+          color: c.$azulClaro;
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container-main-a {
+    .window {
+      width: 100%;
+      height: auto;
+
+      &__screen {
+        .screen-title {
+          font-size: 3rem;
+        }
+
+        .screen-name {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container-main-a {
+    .window {
+
+      &__title {
+        font-size: 1rem;
+
+        .title-right {
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+
+      &__screen {
+
+
+        #scrollbar-style-x {
+          padding: 1em;
+        }
+
+        #scrollbar-style-x::before {
+          padding: 1em;
+          width: 6em;
+        }
+
+        #scrollbar-style-y {
+          padding: 1em;
+        }
+
+        #scrollbar-style-y::before {
+          padding: 1em;
+          height: 6em;
+        }
+
+        #scrollbar-arrow-x {
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        #scrollbar-arrow-y {
+          img {
+
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .screen-title {
+          padding-bottom: 3em;
+          font-size: 2.5rem;
+        }
+
+        .screen-name {
+          font-size: 1.7rem;
+          padding-bottom: 10em;
+        }
+      }
+    }
+  }
+}

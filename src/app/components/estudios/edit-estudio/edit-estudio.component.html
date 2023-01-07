@@ -1,0 +1,44 @@
+<form class="form"  [formGroup]="formulario" (ngSubmit)="editarEstudio(estudio)">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="titulo">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>institucion</mat-label>
+          <input matInput formControlName="institucion">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Fecha Inicio</mat-label>
+          <input matInput [matDatepicker]="fechaInicio" formControlName="inicio">
+          <mat-hint>YYYY-MM-DD</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
+          <mat-datepicker #fechaInicio></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Fecha Fin</mat-label>
+          <input matInput [matDatepicker]="fechaFin" formControlName="fin">
+          <mat-hint>YYYY-MM-DD</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+          <mat-datepicker #fechaFin></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>imagen</mat-label>
+          <input matInput formControlName="img">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-12">
+        <button type="submit" mat-raised-button color="primary">Agregar</button>
+      </div>
+    </div>
+  </form>

@@ -1,0 +1,59 @@
+<form class="form"  [formGroup]="formulario" (ngSubmit)="editarExp(experiencia)">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>puesto</mat-label>
+          <input matInput formControlName="puesto">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>empresa</mat-label>
+          <input matInput formControlName="empresa">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>descripcion</mat-label>
+          <input matInput formControlName="descripcion">
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Fecha Inicio</mat-label>
+          <input matInput [matDatepicker]="fechaInicio" formControlName="inicio">
+          <mat-hint>YYYY-MM-DD</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
+          <mat-datepicker #fechaInicio></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Fecha Fin</mat-label>
+          <input matInput [matDatepicker]="fechaFin" formControlName="fin">
+          <mat-hint>YYYY-MM-DD</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+          <mat-datepicker #fechaFin></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>imagen</mat-label>
+          <input matInput formControlName="img">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>url</mat-label>
+          <input matInput formControlName="url">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-slide-toggle formControlName="activo">Trabajando actualmente</mat-slide-toggle>
+      </div>
+      <div class="col-md-12">
+        <button type="submit" mat-raised-button color="primary">Agregar</button>
+      </div>
+    </div>
+  </form>

@@ -1,0 +1,52 @@
+@use "./src/app/app.component" as c;
+
+
+.window {
+    padding: 1em;
+    background-color: c.$rosaClaro;
+    margin-left: auto;
+    margin-right:auto;
+    height: fit-content;
+    border-radius: 5px;
+    width: 80%;
+
+    &__title {
+      background: c.$rosaFuerte;
+      padding: 0.5em;
+      border: 3px solid c.$violetaFuerte;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.2em;
+       .title-right{
+        img {
+            margin-left: .2rem;
+            height: 1.5em;
+          }
+       }
+      
+    }
+
+
+
+
+    &__screen_user {
+        border: 2px solid c.$violetaFuerte;
+        border-radius: 5px;
+        width: 100%;
+        div {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        #carouselExampleFade{
+         /*  width: 80%; */ 
+        }   
+      }
+  
+      &__margin {
+        padding: 0.5em;
+      }
+}
+

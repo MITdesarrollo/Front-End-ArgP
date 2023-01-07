@@ -1,0 +1,26 @@
+<form class="form"  [formGroup]="formulario"  (ngSubmit)="agregar()">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>icono</mat-label>
+          <input matInput formControlName="icono">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>url</mat-label>
+          <input matInput formControlName="url">
+        </mat-form-field>
+      </div>
+  
+      <div class="col-md-12">
+        <button type="submit" mat-raised-button color="primary">Agregar</button>
+      </div>
+    </div>
+  </form>

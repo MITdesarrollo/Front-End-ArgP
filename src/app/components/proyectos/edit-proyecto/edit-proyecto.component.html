@@ -1,0 +1,45 @@
+<form class="form"  [formGroup]="fomularioProyecto" (ngSubmit)="editarProyecto(proyectos)">
+    <div class="row">
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>nombre</mat-label>
+          <input matInput formControlName="nombre">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>img de tu proyecto</mat-label>
+          <input matInput formControlName="img">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>url</mat-label>
+          <input matInput formControlName="url">
+        </mat-form-field>
+      </div>
+      
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>descricion</mat-label>
+          <input matInput formControlName="descripcion">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>inicio</mat-label>
+          <input matInput formControlName="inicio">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>fin</mat-label>
+          <input matInput formControlName="fin">
+        </mat-form-field>
+      </div>
+      
+      <div class="col-md-12">
+        <button type="submit" mat-raised-button color="primary">Agregar</button>
+      </div>
+    </div> 
+    </form>
