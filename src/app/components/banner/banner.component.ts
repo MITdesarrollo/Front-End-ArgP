@@ -5,7 +5,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  styleUrls: ['./banner.component.scss', './banner-medias.component.scss']
 })
 export class BannerComponent implements OnInit{
 datos: Persona [] = [];
