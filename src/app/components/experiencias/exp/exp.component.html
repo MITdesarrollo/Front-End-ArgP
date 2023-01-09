@@ -1,6 +1,6 @@
-
+<main>
 <div class="cont-estudios">
-  <div class="window">
+     <div class="window">
          <div class="bar">
              <h2>&lt; EXPERIENCIAS LABORALES/&gt; </h2>
              <div class="img-barra">
@@ -13,10 +13,6 @@
            <div class="icono">
              <img [src]="exp.img" alt="img empresa/trabajo">
            </div>
-           <div class="edit-delete">
-            <button type="submit" mat-button (click)="delete(exp.id)">borrar</button> 
-            <button type="submit" mat-button (click)=" editar(exp)">editar</button> 
-           </div>
              <div class="dato_estudios">
                  <h2>Puesto / Rol</h2>
                  <h3>{{exp.puesto}}</h3>
@@ -28,9 +24,19 @@
                  <h3>{{exp.activo}}</h3>
                  <h2>Duración</h2>
                  <h3>{{exp.inicio}} / {{exp.fin}}</h3>
-
+           </div>
+           <div class="edit-delete">
+            <button mat-icon-button type="submit" (click)="delete(exp.id)">
+              <mat-icon color="accent">delete</mat-icon>
+            </button> 
+            <button mat-icon-button type="submit" (click)=" editar(exp)">
+              <mat-icon color="accent">edit</mat-icon>
+            </button> 
            </div>
          </div>
      </div>
+     <button mat-icon-button routerLink="add-exp">
+      <mat-icon color="accent">add</mat-icon>
+     </button> 
 </div>
-<a mat-button routerLink="add-exp"> agregar herr</a>
+</main>

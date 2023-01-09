@@ -1,20 +1,20 @@
-<form class="form"  [formGroup]="formulario" (ngSubmit)="editarExp(experiencia)">
-    <div class="row">
-      <div class="col-md-4">
+<form class="cont-general  mt-5"  [formGroup]="formulario" (ngSubmit)="editarExp(experiencia)">
+    <div class="row" align="center">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>puesto</mat-label>
+          <mat-label>Puesto/Trabajo desarrollado</mat-label>
           <input matInput formControlName="puesto">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>empresa</mat-label>
+          <mat-label>Empresa/Cliente</mat-label>
           <input matInput formControlName="empresa">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>descripcion</mat-label>
+          <mat-label>Descripción del trabajo</mat-label>
           <input matInput formControlName="descripcion">
         </mat-form-field>
       </div>
@@ -37,22 +37,22 @@
           <mat-datepicker #fechaFin></mat-datepicker>
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>imagen</mat-label>
+          <mat-label>Imagen de tu Cliente o Empresa</mat-label>
           <input matInput formControlName="img">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>url</mat-label>
+          <mat-label>Url de tu Cliente o Empresa</mat-label>
           <input matInput formControlName="url">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
-        <mat-slide-toggle formControlName="activo">Trabajando actualmente</mat-slide-toggle>
+      <div class="col-md-6">
+        <mat-slide-toggle formControlName="activo">Trabajando actualmente ?</mat-slide-toggle>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-6">
         <button type="submit" mat-raised-button color="primary">Agregar</button>
       </div>
     </div>

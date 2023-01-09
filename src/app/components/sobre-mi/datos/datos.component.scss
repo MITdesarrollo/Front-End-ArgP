@@ -2,15 +2,12 @@
 
 #second {
   font-family: "Courier Prime", monospace;
-  margin-top: 1rem;
+  margin-top: 4rem;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
   display: flex;
-  .foto {
-    /* width: 30%;
-    margin-left: 2rem; */
-  }
+ 
   .descripcion {
     width: 60%;
   }
@@ -92,6 +89,9 @@
         border-radius: 10px;
       }
     }
+  }
+  .boton-agregar{
+    margin-left: 2rem;
   }
 }
 

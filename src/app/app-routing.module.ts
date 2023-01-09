@@ -10,7 +10,6 @@ import { EditDatosComponent } from './components/sobre-mi/edit-datos/edit-datos.
 import { ExpComponent } from './components/experiencias/exp/exp.component';
 import { AddExpComponent } from './components/experiencias/add-exp/add-exp.component';
 import { EditExpComponent } from './components/experiencias/edit-exp/edit-exp.component';
-import { BannerComponent } from './components/banner/banner.component';
 import { EstudioComponent } from './components/estudios/estudio/estudio.component';
 import { AddEstudioComponent } from './components/estudios/add-estudio/add-estudio.component';
 import { EditEstudioComponent } from './components/estudios/edit-estudio/edit-estudio.component';
@@ -24,7 +23,8 @@ import { AddDatosComponent } from './components/sobre-mi/add-datos/add-datos.com
 
 const routes : Routes = [
    
-  
+  {path:'home' , component: HomeComponent }, 
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'sobre-mi', component: DatosComponent},
   {path: 'sobre-mi', children:[
     {path: 'edit-datos', component: EditDatosComponent},
@@ -56,8 +56,7 @@ const routes : Routes = [
   {path: 'add-skill', component: AddSkillComponent},
   {path: 'edit-skill', component: EditSkillComponent} 
   ]},
-  {path:'home' , component: HomeComponent }, 
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+ 
   {path: '**', component: Pagina404Component} 
 ];
 

@@ -2,14 +2,11 @@
 
 .cont-estudios {
     margin-top: 5rem;
-    border: 2px solid c.$rosaFuerte;
-    border-radius: 10px;
     display: flex;
-    
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    background-color: rgb(228, 180, 180, 0.5);
+    
 
         .icono-b {
             border: 2px solid c.$rosaFuerte;
@@ -60,6 +57,7 @@
             border: 1px solid c.$rosaClaro;
             height: 100%;
             display: flex;
+            justify-content: space-around;
             padding: 1rem;
             border-radius: 5px;
             

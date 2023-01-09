@@ -9,6 +9,6 @@ export class EditarService {
 
   editarPerfil(value: boolean){
     this.editar = value;
-    console.log(this.editar)  
+    
   }
 }

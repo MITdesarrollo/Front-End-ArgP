@@ -1,13 +1,12 @@
-<form class="form"  [formGroup]="formulario" (ngSubmit)="editarSkill(skill)">
-    <div class="row">
-      <div class="col-md-4">
+<form class="cont-general text-center mt-5"  [formGroup]="formulario" (ngSubmit)="editarSkill(skill)">
+    <div class="row" >
+      <div class="col-md-9">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>Nombre de las herramientas que conoces</mat-label>
+          <mat-label>Nombre de la herramienta:</mat-label>
           <input matInput formControlName="nombre">
         </mat-form-field>
       </div>
-      
-      <div class="col-md-12">
+      <div class="col-md-3 boton" >
         <button type="submit" mat-raised-button color="primary">Agregar</button>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
 })
 export class ProyectoComponent implements OnInit{
 proyectos!: Proyecto[];
-indexImg: number = 0;
+
 
 constructor(
   private router: Router,
@@ -31,6 +31,12 @@ getProyecto(): void{
   )
 }
 
+delete(id: number) {
+  if (id != undefined) {
+    this.servProyecto.delete(id).subscribe();
+  }
+  this.proyectos = this.proyectos.filter((el) => el.id != id);
+}
 
 editarProyecto(proyecto: Proyecto) {
   this.router.navigate([

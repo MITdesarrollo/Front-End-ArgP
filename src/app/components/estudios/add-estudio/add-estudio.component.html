@@ -1,14 +1,14 @@
-<form class="form"  [formGroup]="formulario"  (ngSubmit)="agregar()">
-    <div class="row">
-      <div class="col-md-4">
+<form class="cont-general  mt-5"  [formGroup]="formulario"  (ngSubmit)="agregar()">
+    <div class="row" align="center">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>titulo</mat-label>
+          <mat-label>Nombre titulo/certificación</mat-label>
           <input matInput formControlName="titulo">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>intitucion</mat-label>
+          <mat-label>Institucion</mat-label>
           <input matInput formControlName="institucion">
         </mat-form-field>
       </div>
@@ -30,14 +30,14 @@
           <mat-datepicker #fechaFin></mat-datepicker>
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>imagen</mat-label>
+          <mat-label>Imagen de la institucion</mat-label>
           <input matInput formControlName="img">
         </mat-form-field>
       </div>
   
-      <div class="col-md-12">
+      <div class="col-md-6 mt-5">
         <button type="submit" mat-raised-button color="primary">Agregar</button>
       </div>
     </div>

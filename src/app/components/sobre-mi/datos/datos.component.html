@@ -1,42 +1,41 @@
-
- <div class="container-main-a" id="second">
+<main>
+<div class="container-main-a" id="second">
   <div class="foto">
-    
-      <div class="wind-container">
-        
-          <div class="window">
-            
-            <div class="window__title">
-              <div class="title-right">
-                <img
-                src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
-                alt="minimize window"
-              />
-              <img
-                src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
-                alt="expand window"
-              />
-              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="close window" />
-            </div>
+    <div class="wind-container">
+      <div class="window">
+        <div class="window__title">
+          <div class="title-right">
+            <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
+              alt="minimize window" />
+            <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
+              alt="expand window" />
+            <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png"
+              alt="close window" />
           </div>
-            <div class="window__screen_user" >
-              <div *ngFor="let dato of datos">
-                <img [src]="dato.img"/>
-              </div>
-        </div>  
+        </div>
+        <div class="window__screen_user">
+          <div *ngFor="let dato of datos">
+            <img [src]="dato.img" />
+          </div>
+        </div>
         <div class="window__title_user" *ngFor="let dato of datos">
           <p>{{dato.titulo}}</p>
         </div>
-          </div>
-
-
-         <div class="texto-desc" *ngFor="let dato of datos">
-            <h2>Sobre mi >_ </h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, repellendus facere! Ullam iure sunt dicta nisi perferendis, harum veritatis deserunt repellat aliquam temporibus voluptates ipsam dolor beatae quod expedita aspernatur.
-
-           <h3>Te invito a descargar mi CV</h3>
-           <a [href]="dato.curriculum" download target="_blank">Clik</a>
-         </div>
-         <button (click)="mostrar()">mostrar</button>
-         <button *ngIf="editar" type="submit" mat-button (click)="editarDatos(datos[0])">editar</button>  
+      </div>
+      <div class="texto-desc" *ngFor="let dato of datos">
+        <h2>Sobre mi >_ </h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, repellendus facere! Ullam iure sunt dicta nisi
+        perferendis, harum veritatis deserunt repellat aliquam temporibus voluptates ipsam dolor beatae quod expedita
+        aspernatur.
+        <h3>Te invito a descargar mi CV</h3>
+        <a [href]="dato.curriculum" download target="_blank">Clik</a>
+      </div>
+      <div class="boton-agregar">
+        <button  mat-icon-button type="submit" (click)="editarDatos(datos[0])">
+          <mat-icon color="accent">edit</mat-icon>
+        </button>
+      </div> 
+    </div>
+  </div>
 </div>
+</main>

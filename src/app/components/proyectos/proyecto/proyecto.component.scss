@@ -9,6 +9,7 @@
     height: fit-content;
     border-radius: 5px;
     width: 80%;
+    
 
     &__title {
       background: c.$rosaFuerte;
@@ -40,9 +41,10 @@
             height: 100%;
           }
         }
-        #carouselExampleFade{
-         /*  width: 80%; */ 
-        }   
+       .edit-delete{
+        display: flex;
+        justify-content: center;
+       }   
       }
   
       &__margin {

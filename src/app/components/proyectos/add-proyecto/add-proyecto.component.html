@@ -1,14 +1,27 @@
-<form class="form"  [formGroup]="formulario"  (ngSubmit)="agregar()">
-    <div class="row">
-      <div class="col-md-4">
+<form class="cont-general  mt-5 "  [formGroup]="formulario"  (ngSubmit)="agregar()">
+    <div class="row"  align="center">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>nombre</mat-label>
+          <mat-label>Nombre de tu proyecto</mat-label>
           <input matInput formControlName="nombre">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>descripcion</mat-label>
+          <mat-label>Imagen de tu proyecto</mat-label>
+          <input matInput formControlName="img">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Url a tu proyecto</mat-label>
+          <input matInput formControlName="url">
+        </mat-form-field>
+      </div>
+      
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Descrición a tu proyecto</mat-label>
           <input matInput formControlName="descripcion">
         </mat-form-field>
       </div>
@@ -21,7 +34,6 @@
           <mat-datepicker #fechaInicio></mat-datepicker>
         </mat-form-field>
       </div>
-    
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Fecha Fin</mat-label>
@@ -31,19 +43,8 @@
           <mat-datepicker #fechaFin></mat-datepicker>
         </mat-form-field>
       </div>
-      <div class="col-md-4">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>img de tu proyecto </mat-label>
-          <input matInput formControlName="img">
-        </mat-form-field>
-      </div>
-      <div class="col-md-4">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>url del proyecto </mat-label>
-          <input matInput formControlName="url">
-        </mat-form-field>
-      </div>
-      <div class="col-md-12">
+      
+      <div class="col-md-6">
         <button type="submit" mat-raised-button color="primary">Agregar</button>
       </div>
     </div> 

@@ -25,10 +25,10 @@ export class DatosComponent  implements OnInit{
 ngOnInit(): void {
  this.getDatos();
  this.editar = this.serEdit.editar;
- console.log(this.editar+"aca deberia de cambiar");
+ console.log(this.editar + "aca deberia de cambiar");
 }
 mostrar(){
-  console.log(this.editar);
+  console.log(this.editar + "asdasdas");
   
 }
 getDatos(): void{

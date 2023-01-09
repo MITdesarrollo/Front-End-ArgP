@@ -8,8 +8,10 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatNativeDateModule} from '@angular/material/core';
-import {MatToolbarModule} from '@angular/material/toolbar'
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
     imports: [
         MatTableModule,
@@ -33,7 +35,10 @@ import {MatToolbarModule} from '@angular/material/toolbar'
         MatDatepickerModule,
         MatSlideToggleModule,
         MatNativeDateModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatExpansionModule
     ]
 })
 export class MaterialModule{

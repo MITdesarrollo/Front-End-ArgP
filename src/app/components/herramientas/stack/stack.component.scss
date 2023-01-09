@@ -1,58 +1,58 @@
 @use './src/app/app.component' as c;
 
-.skills {
-    margin-top: 8rem;
-    border: 1px solid c.$marron;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    margin-bottom: 3rem;
-
-    .window {
-
-        .bar {
-            background-color: c.$rosaFuerte;
-            border: 2px solid c.$marron;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-
-            h1 {
-                margin-left: 20rem;
-                color: white;
-                font-size: 3rem;
-            }
-
-            .img {
+    .skills {
+        display: flex;
+        margin-top: 8rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-bottom: 3rem;
+    
+        .window {
+    
+            .bar {
+                background-color: c.$rosaFuerte;
+                border: 2px solid c.$marron;
+                border-radius: 5px;
                 display: flex;
-                align-items: center;
-
-                img {
-                    margin-right: 1rem;
-                    width: 3rem;
-                    padding: .2rem;
-                }
-            }
-
-        }
-
-        .icono {
-            padding-top: 2rem;
-            border-radius: 5px;
-            border: 1px solid c.$marron;
-            background: rgb(104, 150, 178, 0.9);
-            ul {
-                column-count: 2;
-                padding: 1rem;
-                li{
+                justify-content: space-between;
+    
+                h1 {
+                    margin-left: 20rem;
+                    color: white;
                     font-size: 3rem;
-                    color: c.$marron;
-                    list-style: none;
                 }
-              }
-            
+    
+                .img {
+                    display: flex;
+                    align-items: center;
+    
+                    img {
+                        margin-right: 1rem;
+                        width: 3rem;
+                        padding: .2rem;
+                    }
+                }
+    
+            }
+    
+            .icono {
+                padding-top: 2rem;
+                border-radius: 5px;
+                border: 1px solid c.$marron;
+                background: rgb(104, 150, 178, 0.9);
+                ul {
+                    column-count: 2;
+                    padding: 1rem;
+                    li{
+                        font-size: 3rem;
+                        color: c.$marron;
+                        list-style: none;
+                    }
+                  }
+                
+            }
+    
         }
-
     }
-}
+
