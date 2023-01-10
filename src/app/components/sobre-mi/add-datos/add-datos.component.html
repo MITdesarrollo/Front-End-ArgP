@@ -1,57 +1,59 @@
-<form class="cont-general  mt-5 "  [formGroup]="formulario"  (ngSubmit)="agregar()">
-    <div class="row" >
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>nombre</mat-label>
-          <input matInput formControlName="nombre">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>apellido</mat-label>
-          <input matInput formControlName="apellido">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>descripcion</mat-label>
-          <input matInput formControlName="descripcion">
-        </mat-form-field>
-      </div>
-      
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>imagen</mat-label>
-          <input matInput formControlName="img">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>fecha nacimiento yyyy-mm-dd </mat-label>
-          <input matInput formControlName="nacimiento">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>titulo </mat-label>
-          <input matInput formControlName="titulo">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>email</mat-label>
-          <input matInput formControlName="email">
-        </mat-form-field>
-      </div>
-      <div class="col-md-7">
-        <mat-form-field appearance="fill" class="fill">
-          <mat-label>link cv</mat-label>
-          <input matInput formControlName="curriculum">
-        </mat-form-field>
-      </div>
-      
-      <div class="col-md-7">
-        <button type="submit" mat-raised-button color="primary">Agregar</button>
-      </div>
-    </div> 
+<form class="cont-general"  [formGroup]="formulario"  (ngSubmit)="agregar()">
+  <div class="row"  align="center">
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Tu nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Tu apellido</mat-label>
+        <input matInput formControlName="apellido">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Descripcion sobre ti</mat-label>
+        <input matInput formControlName="descripcion">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Una foto tuya</mat-label>
+        <input matInput formControlName="img">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Fecha Nacimiento</mat-label>
+        <input matInput [matDatepicker]="fechaFin" formControlName="nacimiento">
+        <mat-hint>YYYY-MM-DD</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+        <mat-datepicker #fechaFin></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Titulo para tu banner</mat-label>
+        <input matInput formControlName="titulo">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Tu correo</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill" class="fill">
+        <mat-label>Link a tu cv</mat-label>
+        <input matInput formControlName="curriculum">
+      </mat-form-field>
+    </div>
+ 
+    <div class="col-md-6">
+      <button type="submit" mat-raised-button >Agregar los datos</button>
+    </div>
+  </div> 
   </form>

@@ -1,19 +1,27 @@
 
 <main>
-<a mat-button routerLink="add-red"> Agregar otra red:</a>
+  <div class="cont-general">
+  <div class="titulo">
+    <span>&lt;Ponete en contacto/&gt;</span>
+    <button mat-icon-button routerLink="add-red">
+      <mat-icon color="accent">add</mat-icon>
+     </button> 
+  </div>
 <div class="container">
-<div class="row" *ngFor="let red of redes">
+<div class="row w-50" *ngFor="let red of redes">
   <div class="icono">
     <img [src]="red.icono" alt="img institucion">
   </div>
-    <div class="delete-edit">
+  <a [href]="red.url">{{red.url}}</a>
+  <div class="delete-edit">
         <button mat-icon-button type="submit" (click)="delete(red.id)">
-          <mat-icon color="accent">delete</mat-icon>
+          <mat-icon >delete</mat-icon>
         </button> 
         <button mat-icon-button type="submit" (click)=" editar(red)">
-          <mat-icon color="accent">edit</mat-icon>
+          <mat-icon >edit</mat-icon>
         </button>               
-    </div>
+   </div>
   </div>
+</div>
 </div>
 </main>

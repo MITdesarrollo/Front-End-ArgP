@@ -2,7 +2,7 @@
 
 #second {
   font-family: "Courier Prime", monospace;
-  margin-top: 4rem;
+  padding-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   width: 85%;
@@ -60,7 +60,7 @@
 
     &__title_user{
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-top: .5rem;
         text-decoration: underline;
     }
@@ -77,10 +77,25 @@
     -moz-box-shadow: 24px 24px 0px -3px c.$marron;
     border-radius: 10px;
     color: white;
-  
-    h2 {
+    span{
+      display: block;
+      color: white;
+      font-size: 2rem;
+      white-space: nowrap;
+      border-right: 1px solid;
+      width: 11ch;
       margin-bottom: 1em;
-    }
+      animation: typing 2s steps(11),
+      blink .5s infinite  step-end alternate;
+      overflow: hidden;
+  } 
+  @keyframes typing {
+      from{ width: 0}
+  }
+  @keyframes blink {
+      50%{ border-color: transparent}
+  }
+   
   
     h3 {
       margin-left: 3em;
@@ -92,6 +107,9 @@
   }
   .boton-agregar{
     margin-left: 2rem;
+    mat-icon{
+      color: white;
+      }
   }
 }
 

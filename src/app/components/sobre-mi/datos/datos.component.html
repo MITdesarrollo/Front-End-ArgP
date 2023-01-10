@@ -23,17 +23,19 @@
         </div>
       </div>
       <div class="texto-desc" *ngFor="let dato of datos">
-        <h2>Sobre mi >_ </h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, repellendus facere! Ullam iure sunt dicta nisi
-        perferendis, harum veritatis deserunt repellat aliquam temporibus voluptates ipsam dolor beatae quod expedita
-        aspernatur.
-        <h3>Te invito a descargar mi CV</h3>
+        <span>Sobre mi >_</span>
+        <h4>{{dato.descripcion}}</h4>
+  
+        <h4>Te invito a descargar mi CV</h4>
         <a [href]="dato.curriculum" download target="_blank">Clik</a>
       </div>
       <div class="boton-agregar">
         <button  mat-icon-button type="submit" (click)="editarDatos(datos[0])">
           <mat-icon color="accent">edit</mat-icon>
         </button>
+        <button mat-icon-button routerLink="add-datos">
+          <mat-icon color="accent">add</mat-icon>
+         </button>
       </div> 
     </div>
   </div>

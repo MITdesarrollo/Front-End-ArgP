@@ -1,25 +1,25 @@
-<form class="form"  [formGroup]="formulario" (ngSubmit)="editarCurso(red)">
-    <div class="row">
-      <div class="col-md-4">
+<form class="cont-general"  [formGroup]="formulario" (ngSubmit)="editarCurso(red)">
+    <div class="row" align="center">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>Nombre</mat-label>
+          <mat-label>Nombre de la red</mat-label>
           <input matInput formControlName="nombre">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>icono</mat-label>
+          <mat-label>Icono</mat-label>
           <input matInput formControlName="icono">
         </mat-form-field>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
-          <mat-label>url</mat-label>
+          <mat-label>Url a tu red</mat-label>
           <input matInput formControlName="url">
         </mat-form-field>
       </div>
   
-      <div class="col-md-12">
+      <div class="col-md-6">
         <button type="submit" mat-raised-button color="primary">Agregar</button>
       </div>
     </div>

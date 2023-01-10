@@ -1,12 +1,73 @@
-.container{
-    border: 1px solid black;
-    width: 50%;
-    display: flex;
-    padding: 2rem;
-    .icono{
-        img{
-            width: 5rem;
+@use './src/app/app.component' as c;
+.cont-general{
+    padding-top: 2em;
+    .titulo{
+        border: 2px solid c.$rosaFuerte;
+        background-color: c.$azulClaro;
+        color: white;
+        border-radius: 5px;
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        span{
+            display: block;
+            color: white;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            border-right: 2px solid;
+            width: 21ch;
+
+            animation: typing 2s steps(21),
+            blink .5s infinite  step-end alternate;
+            overflow: hidden;
+        } 
+        @keyframes typing {
+            from{ width: 0}
         }
-        
+        @keyframes blink {
+            50%{ border-color: transparent}
+        }
+        mat-icon{
+            color: white;
+            }
+    }
+    .container{
+        margin-top: .5rem;
+        border: 2px solid c.$rosaFuerte;
+        background-color: c.$rosaFuerte;
+        border-radius: 5px;
+        width: 40%;
+        display: flex;
+        padding: 2rem;
+        flex-wrap: wrap;
+        a{
+            list-style: none;
+            text-align: center;
+            color: white;
+            margin-top: .2rem;
+            }
+        .icono{
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            
+            img{
+                background-color:c.$violetaClaro;
+                padding: .5rem;
+                border-radius: 5px;
+                width: 5rem;
+            } 
+        }
+        .delete-edit{
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            mat-icon{
+            color: white;
+            }
+        }
     }
 }

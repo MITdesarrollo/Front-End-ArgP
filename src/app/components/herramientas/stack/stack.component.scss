@@ -2,23 +2,46 @@
 
     .skills {
         display: flex;
-        margin-top: 8rem;
+        padding-top: 2rem;
         margin-left: auto;
         margin-right: auto;
         width: 80%;
         margin-bottom: 3rem;
     
         .window {
-    
+         width: 100%;
             .bar {
                 background-color: c.$rosaFuerte;
                 border: 2px solid c.$marron;
                 border-radius: 5px;
                 display: flex;
                 justify-content: space-between;
-    
+                padding: .3rem;
+                mat-icon{
+                    color: white;
+                    }
+                span{
+                    display: block;
+                    color: white;
+                    font-size: 2rem;
+                    white-space: nowrap;
+                    border-right: 2px solid;
+                    width: 11ch;
+
+                    animation: typing 2s steps(11),
+                    blink .5s infinite  step-end alternate;
+                    overflow: hidden;
+                } 
+                @keyframes typing {
+                    from{ width: 0}
+                }
+                @keyframes blink {
+                    50%{ border-color: transparent}
+                }
+
+
+
                 h1 {
-                    margin-left: 20rem;
                     color: white;
                     font-size: 3rem;
                 }
@@ -26,17 +49,19 @@
                 .img {
                     display: flex;
                     align-items: center;
-    
+                    justify-content: end;
+                    
                     img {
                         margin-right: 1rem;
                         width: 3rem;
                         padding: .2rem;
                     }
                 }
+               
     
             }
     
-            .icono {
+            .skill {
                 padding-top: 2rem;
                 border-radius: 5px;
                 border: 1px solid c.$marron;
@@ -48,6 +73,10 @@
                         font-size: 3rem;
                         color: c.$marron;
                         list-style: none;
+
+                        mat-icon{
+                            color: white;
+                            }
                     }
                   }
                 

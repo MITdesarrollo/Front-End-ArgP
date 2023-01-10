@@ -1,17 +1,24 @@
 <main>
- 
+  <div class="contenedor">
 <div class="window">
+
+
   <div class="window__title">
+    <span>&lt;MIS PROYECTOS/&gt;</span>
+    <div *ngFor="let image of proyectos">
+      <a [href]="image.url">{{image.url}}</a>
+    </div>
     <div class="title-right">
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
         alt="minimize window" />
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
         alt="expand window" />
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="close window" />
+      <button mat-icon-button routerLink="add-prod">
+        <mat-icon color="accent">add</mat-icon>
+      </button>
     </div>
-<button mat-icon-button routerLink="add-prod">
-  <mat-icon color="accent">add</mat-icon>
- </button>
+    
   </div>
   <div class="window__screen_user">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -38,6 +45,7 @@
       </button>
     </div>
   </div>
+</div>
 </div>
 </main>
 
