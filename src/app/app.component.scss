@@ -45,20 +45,6 @@ animation: test 300ms linear;
   }
 }
 
-@media screen and (max-width: 992px) {
-  .contenedor{
-    .container-sidenav {
-      width: 10%;
-      min-width: fit-content;
-    }
-
-    .container-router-outlet {
-      width: 90%;
-    }
-  }
-}
-
-
 $rosaClaro: #f1dedc;
 $rosaFuerte:#e4b4b4;
 $violetaClaro:#adabb6;
