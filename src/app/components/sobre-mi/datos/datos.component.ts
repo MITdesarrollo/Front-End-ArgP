@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/models/persona';
-import { EditarService } from 'src/app/services/editar.service';
+import { Sesion } from 'src/app/models/sesion';
+
 import { PersonaService } from 'src/app/services/persona.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-datos',
@@ -12,24 +15,13 @@ import { PersonaService } from 'src/app/services/persona.service';
 export class DatosComponent  implements OnInit{
   datos: Persona[]  = [];
   
-  editar!: boolean;
-
+   
   constructor(
    private serviPerso : PersonaService,
-   private router: Router,
-   private serEdit: EditarService
-  ){
-   
-   
-}
+   private router: Router,){}
 ngOnInit(): void {
  this.getDatos();
- this.editar = this.serEdit.editar;
- console.log(this.editar + "aca deberia de cambiar");
-}
-mostrar(){
-  console.log(this.editar + "asdasdas");
-  
+
 }
 getDatos(): void{
  this.serviPerso.lista().subscribe(
@@ -52,5 +44,17 @@ editarDatos(datos: Persona) {
     nacimiento: datos.nacimiento
     },
   ]);
+  Swal.fire({
+    title: 'Datos agregados correctamente',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
+  this.router.navigate(['sobre-mi'])
+  }
 }
-}
+
+

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {  ActivatedRoute, Router } from '@angular/router';
 import { Contacto } from 'src/app/models/contacto';
 import { ContactoService } from 'src/app/services/contacto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-red',
@@ -33,7 +34,16 @@ export class RedComponent implements OnInit{
       data => console.log("se borro")
     )
   }
-  this.redes = this.redes.filter(el => el.id != id)
+  this.redes = this.redes.filter(el => el.id != id);
+  Swal.fire({
+    title: 'Datos eliminados correctamente',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
 
 }
   editar(red : Contacto){

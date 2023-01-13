@@ -21,7 +21,7 @@
                  <h2>Empresa / Cliente</h2>
                  <h3>{{exp.empresa}}</h3>
                  <h2>Trabajando actualmente</h2>
-                 <h3>{{exp.activo}}</h3>
+                 <h3>{{exp.activo | booleanText : "Trabajando actualmente":"Ya no trabajo aquí" }}</h3>
                  <h2>Duración</h2>
                  <h3>{{exp.inicio}} / {{exp.fin}}</h3>
            </div>

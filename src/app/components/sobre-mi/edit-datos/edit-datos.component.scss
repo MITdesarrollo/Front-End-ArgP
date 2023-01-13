@@ -1,5 +1,12 @@
+@use "./src/app/app.component" as c;
 .cont-general{
     padding: 2rem;
+    .inputs{
+        border: 1px solid c.$rosaFuerte;
+        background-color: rgb(127, 108, 119, 0.4);
+        border-radius: 5px;
+        padding: 1rem;
+    }
     mat-form-field{
         width: 60%;
     }

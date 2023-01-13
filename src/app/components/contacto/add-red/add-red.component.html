@@ -4,23 +4,25 @@
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Nombre de la red</mat-label>
           <input matInput formControlName="nombre">
+          <p *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Icono</mat-label>
           <input matInput formControlName="icono">
+          <p *ngIf="formulario.get('icono')?.touched && formulario.get('icono')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Url a tu red</mat-label>
           <input matInput formControlName="url">
+          <p *ngIf="formulario.get('url')?.touched && formulario.get('url')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
-  
       <div class="col-md-6">
-        <button type="submit" mat-raised-button color="primary">Agregar</button>
+        <button type="submit" mat-raised-button>Agregar</button>
       </div>
     </div>
   </form>

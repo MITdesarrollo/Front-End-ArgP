@@ -95,15 +95,13 @@
   @keyframes blink {
       50%{ border-color: transparent}
   }
-   
-  
-    h3 {
-      margin-left: 3em;
-  
-      textarea {
-        border-radius: 10px;
-      }
-    }
+  .boton-cv{
+    display: flex;
+    justify-content: end;
+    img{
+      width: 3rem;
+     }
+  } 
   }
   .boton-agregar{
     margin-left: 2rem;

@@ -3,16 +3,28 @@
   <div class="cont-general">
   <div class="titulo">
     <span>&lt;Ponete en contacto/&gt;</span>
-    <button mat-icon-button routerLink="add-red">
-      <mat-icon color="accent">add</mat-icon>
-     </button> 
+    <div>
+      <div class="title-right">
+        <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
+          alt="minimize window" />
+        <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
+          alt="expand window" />
+        <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="close window" />
+        <button mat-icon-button routerLink="add-red">
+          <mat-icon color="accent">add</mat-icon>
+         </button>
+      </div>
+    </div>
+     
   </div>
 <div class="container">
 <div class="row w-50" *ngFor="let red of redes">
   <div class="icono">
     <img [src]="red.icono" alt="img institucion">
   </div>
-  <a [href]="red.url">{{red.url}}</a>
+  <div class="url-red">
+    <a [href]="red.url"></a>
+  </div>
   <div class="delete-edit">
         <button mat-icon-button type="submit" (click)="delete(red.id)">
           <mat-icon >delete</mat-icon>

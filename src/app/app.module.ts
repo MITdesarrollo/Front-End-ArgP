@@ -31,7 +31,7 @@ import { DatosComponent } from './components/sobre-mi/datos/datos.component';
 import { EditDatosComponent } from './components/sobre-mi/edit-datos/edit-datos.component';
 import { AddDatosComponent } from './components/sobre-mi/add-datos/add-datos.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-
+import {BooleanTextPipe} from './pipes/boolean-text.pipe'
 
 
 
@@ -69,7 +69,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     BannerComponent,
     LoginComponent,
     
-    SidenavComponent
+    SidenavComponent,
+    BooleanTextPipe
   ],
   imports: [
     BrowserModule,
@@ -78,7 +79,9 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

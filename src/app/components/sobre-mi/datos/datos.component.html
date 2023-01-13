@@ -25,9 +25,11 @@
       <div class="texto-desc" *ngFor="let dato of datos">
         <span>Sobre mi >_</span>
         <h4>{{dato.descripcion}}</h4>
-  
-        <h4>Te invito a descargar mi CV</h4>
-        <a [href]="dato.curriculum" download target="_blank">Clik</a>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae assumenda molestias! Architecto inventore dolore id nulla delectus et veritatis cumque dolorum, fuga ipsum, corrupti dolores totam ratione autem consequatur.
+        <div class="boton-cv">
+          <a [href]="dato.curriculum" download target="_blank">
+            <img src="https://res.cloudinary.com/dets0trss/image/upload/v1673388793/investigacion_ib2eke.png" alt="icono.cv"></a>
+        </div> 
       </div>
       <div class="boton-agregar">
         <button  mat-icon-button type="submit" (click)="editarDatos(datos[0])">

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-proyecto',
@@ -49,6 +50,15 @@ export class EditProyectoComponent {
      fin: this.fomularioProyecto.value.fin
     }
     this.servProy.edit(proye).subscribe();
-    alert('se edito')
+    Swal.fire({
+      title: 'Datos editados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+    this.router.navigate(['proyectos'])
     }
 }

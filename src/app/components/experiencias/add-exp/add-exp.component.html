@@ -1,21 +1,24 @@
 <form class="cont-general"  [formGroup]="formulario"  (ngSubmit)="agregar()">
-    <div class="row"  align="center">
+    <div class="row inputs"  align="center">
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Puesto/Trabajo desarrollado</mat-label>
           <input matInput formControlName="puesto">
+          <p *ngIf="formulario.get('puesto')?.touched && formulario.get('puesto')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Empresa/Cliente</mat-label>
           <input matInput formControlName="empresa">
+          <p *ngIf="formulario.get('empresa')?.touched && formulario.get('empresa')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Descripción del trabajo</mat-label>
           <input matInput formControlName="descripcion">
+          <p *ngIf="formulario.get('descripcion')?.touched && formulario.get('descripcion')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
 
@@ -23,6 +26,7 @@
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Fecha Inicio</mat-label>
           <input matInput [matDatepicker]="fechaInicio" formControlName="inicio">
+          <p *ngIf="formulario.get('inicio')?.touched && formulario.get('inicio')?.errors?.['required']"> ¡Este campo es requerido!</p>
           <mat-hint>YYYY-MM-DD</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
           <mat-datepicker #fechaInicio></mat-datepicker>
@@ -32,6 +36,7 @@
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Fecha Fin</mat-label>
           <input matInput [matDatepicker]="fechaFin" formControlName="fin">
+          <p *ngIf="formulario.get('fin')?.touched && formulario.get('fin')?.errors?.['required']"> ¡Este campo es requerido!</p>
           <mat-hint>YYYY-MM-DD</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
           <mat-datepicker #fechaFin></mat-datepicker>
@@ -41,12 +46,14 @@
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Imagen de tu Cliente o Empresa</mat-label>
           <input matInput formControlName="img">
+          <p *ngIf="formulario.get('img')?.touched && formulario.get('img')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">
         <mat-form-field appearance="fill" class="fill">
           <mat-label>Url de tu Cliente o Empresa</mat-label>
           <input matInput formControlName="url">
+          <p *ngIf="formulario.get('url')?.touched && formulario.get('url')?.errors?.['required']"> ¡Este campo es requerido!</p>
         </mat-form-field>
       </div>
       <div class="col-md-6">

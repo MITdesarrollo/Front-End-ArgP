@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Contacto } from 'src/app/models/contacto';
 import { ContactoService } from 'src/app/services/contacto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-red',
@@ -15,8 +16,10 @@ export class EditRedComponent implements OnInit{
 
  id!: number;
 
- constructor(private servContc: ContactoService,
-  private activatedRoute: ActivatedRoute){
+ constructor(
+  private servContc: ContactoService,
+  private activatedRoute: ActivatedRoute,
+  private router:Router){
  }
 
  ngOnInit(): void {
@@ -39,6 +42,15 @@ this.activatedRoute.paramMap.subscribe((parametros) => {
   url: this.formulario.value.url
  }
  this.servContc.edit(r).subscribe();
- alert('se edito')
+ Swal.fire({
+  title: 'Datos editados correctamente',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }
+});
+this.router.navigate(['contacto']);
  }
 }

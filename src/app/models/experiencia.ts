@@ -5,7 +5,7 @@ export interface Experiencia {
     img: string;
     empresa: string;
     url?: string;
-    activo?: string;
+    activo: boolean;
     inicio: Date;
     fin?: Date;
 }

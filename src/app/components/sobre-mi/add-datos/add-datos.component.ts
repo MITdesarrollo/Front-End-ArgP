@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/models/persona';
 import { PersonaService } from 'src/app/services/persona.service';
@@ -20,14 +20,14 @@ export class AddDatosComponent {
     private activaroute: ActivatedRoute
   ){
     this.formulario = new FormGroup({
-      nombre: new FormControl('',[]),
-      apellido: new FormControl('',[]),
-      descripcion:new FormControl('',[]),
-      titulo: new FormControl('',[]),
-      email: new FormControl('',[]),
-      img: new FormControl('',[]),
-      curriculum: new FormControl('',[]),
-      nacimiento: new FormControl('',[]),
+      nombre: new FormControl('',[Validators.required]),
+      apellido: new FormControl('',[Validators.required]),
+      descripcion:new FormControl('',[Validators.required]),
+      titulo: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required]),
+      img: new FormControl('',[Validators.required]),
+      curriculum: new FormControl('',[Validators.required]),
+      nacimiento: new FormControl('',[Validators.required]),
     });
   }
 

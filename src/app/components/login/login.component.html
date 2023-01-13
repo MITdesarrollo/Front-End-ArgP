@@ -1,1 +1,24 @@
-<p>login works!</p>
+<main>
+  <form class="cont-general"  [formGroup]="formulario"  (ngSubmit)="onLogin()">
+    <div class="row inputs d-flex justify-content-center"  align="center">
+      <div class="col-md-10">
+        <span>Bienvenido a mi Portfolio >_</span>
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.errors?.['required']"> ¡Este campo es requerido!</p>
+          <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.errors?.['email']">¡Formato Email no valido!</p>
+        </mat-form-field>
+       
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+          <p *ngIf="formulario.get('password')?.touched && formulario.get('password')?.errors?.['required']"> ¡Este campo es requerido!</p>
+        </mat-form-field>
+      </div>
+      <div class="row d-flex justify-content-center mb-2">
+        <button class="boton-go" type="submit" mat-raised-button>Go!!</button>
+      </div>
+    </div>
+  </form>
+</main>

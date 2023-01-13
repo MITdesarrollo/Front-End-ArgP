@@ -1,10 +1,9 @@
 @use './src/app/app.component' as c;
 
 .grid-container-header {
-	background-color: c.$rosaClaro;
+	background-color: c.$violetaClaro;
 	width: 100%;
 	top: 0;
-	height: 10vh;
 	min-height: 60px;
 }
 .left-header {
@@ -22,12 +21,17 @@
 	    }
 		}
 	}
+	.menu-burg{
+		display: none;
+	}
 }
 
 .nombre_logo {
 	text-align: center;
-	color: c.$violetaFuerte;
+	color: white;
 	font-size: 1rem;
+	font-family: "Courier Prime", monospace;
+	
 }
 .icono_arg {
     padding: .5rem;
@@ -38,6 +42,11 @@
 .accesos_componentes {
 	display: flex;
 	justify-content: space-around;
+	border: 1PX solid c.$violetaFuerte;
+	a{  
+	 text-decoration: none;
+	 color: white;
+	}
 }
 .right-header {
 	height: 100%;
@@ -62,3 +71,76 @@
 	}
 }
  
+//media 
+@media screen and (max-width: 992px){
+	
+.grid-container-header {
+	background-color: c.$violetaClaro;
+	width: 100%;
+	top: 0;
+	min-height: 60px;
+	
+	.left-header {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 100%;
+		.edit{
+			img{
+			width: 2rem;
+			height: 2rem;
+			&:hover {
+			transform: scale(1.3);
+			transition: all 0.3s ease;
+			}
+			}
+		}
+		.menu-burg{
+			display: flex;
+		}
+	}
+}
+
+
+.nombre_logo {
+	display: none;	
+}
+.icono_arg {
+    padding: .5rem;
+	border-radius: 10px;
+	width: 4rem;
+	height: 4rem;
+}
+.accesos_componentes {
+	display: flex;
+	justify-content: space-around;
+	border: 1PX solid c.$violetaFuerte;
+	a{  
+	 text-decoration: none;
+	 color: white;
+	}
+}
+.right-header {
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.iconos {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.link_red {
+	padding: 0 1rem 0 1rem;
+}
+.img_red {
+	width: 2.5rem;
+	height: 2.5rem;
+	&:hover {
+		transform: scale(1.3);
+		transition: all 0.3s ease;
+	}
+}
+ 
+}

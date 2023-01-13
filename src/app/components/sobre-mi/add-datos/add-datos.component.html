@@ -1,33 +1,38 @@
 <form class="cont-general"  [formGroup]="formulario"  (ngSubmit)="agregar()">
-  <div class="row"  align="center">
+  <div class="row inputs"  align="center">
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Tu nombre</mat-label>
         <input matInput formControlName="nombre">
+        <p *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Tu apellido</mat-label>
         <input matInput formControlName="apellido">
+        <p *ngIf="formulario.get('apellido')?.touched && formulario.get('apellido')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Descripcion sobre ti</mat-label>
         <input matInput formControlName="descripcion">
+        <p *ngIf="formulario.get('descripcion')?.touched && formulario.get('descripcion')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Una foto tuya</mat-label>
         <input matInput formControlName="img">
+        <p *ngIf="formulario.get('img')?.touched && formulario.get('img')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Fecha Nacimiento</mat-label>
         <input matInput [matDatepicker]="fechaFin" formControlName="nacimiento">
+        <p *ngIf="formulario.get('nacimiento')?.touched && formulario.get('nacimiento')?.errors?.['required']"> ¡Este campo es requerido!</p>
         <mat-hint>YYYY-MM-DD</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
         <mat-datepicker #fechaFin></mat-datepicker>
@@ -37,18 +42,21 @@
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Titulo para tu banner</mat-label>
         <input matInput formControlName="titulo">
+        <p *ngIf="formulario.get('titulo')?.touched && formulario.get('titulo')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Tu correo</mat-label>
         <input matInput formControlName="email">
+        <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
     <div class="col-md-6">
       <mat-form-field appearance="fill" class="fill">
         <mat-label>Link a tu cv</mat-label>
         <input matInput formControlName="curriculum">
+        <p *ngIf="formulario.get('curriculum')?.touched && formulario.get('curriculum')?.errors?.['required']"> ¡Este campo es requerido!</p>
       </mat-form-field>
     </div>
  

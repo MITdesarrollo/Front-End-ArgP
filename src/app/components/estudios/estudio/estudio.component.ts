@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-estudio',
@@ -33,7 +34,16 @@ delete(id:number){
       data => console.log("se borro")
     )
   }
-  this.estudios = this.estudios.filter(el => el.id != id)
+  this.estudios = this.estudios.filter(el => el.id != id);
+  Swal.fire({
+    title: 'Datos eliminados correctamente',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
 
 }
   editar(estudio : Educacion){

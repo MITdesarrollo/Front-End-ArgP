@@ -1,10 +1,11 @@
 <header class="grid-container-header">
   <div class="left-header">
+    <div class="menu-burg"><img src="https://res.cloudinary.com/dets0trss/image/upload/v1673572430/menu_aeqmy2.png" alt=""></div>
     <div class="logo">
-      <img routerLink="home" class="icono_arg" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/logo_t8zyls.png" alt="logo de la pagina" />
+      <img routerLink="home" class="icono_arg" src="https://res.cloudinary.com/dets0trss/image/upload/v1673407031/__mnmfdx.png" />
       </div>
       <div class="nombre_logo">
-        <h1>Argentina Programa</h1>
+        <h2>Argentina Programa</h2>
       </div>
       <div class="right-header">
         <!-- redes editables -->
@@ -13,17 +14,18 @@
            </div>
       </div>
       <div class="edit">
-         <img (click)="cambiarModoEdicion()" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil">
+         <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil">
       </div> 
   </div>
- 
-  <div class="accesos_componentes">
-    <a mat-button routerLink="home">home</a>
-    <a mat-button routerLink="sobre-mi"> sobre mi</a>
-    <a mat-button routerLink="stack">skills</a>
-    <a mat-button routerLink="exp"> experiencia </a>
-    <a mat-button routerLink="estudios"> estudios</a>
-    <a mat-button routerLink="contacto"> contacto </a>
-    <a mat-button routerLink="proyectos">proyectos</a>
-  </div>
+  <nav class="accesos_componentes">
+    <div>
+    <a mat-button routerLink="home">HOME</a>
+    <a mat-button routerLink="sobre-mi">SOBRE MI</a>
+    <a mat-button routerLink="estudios">ESTUDIOS</a>
+    <a mat-button routerLink="exp">EXPERIENCIA</a>
+    <a mat-button routerLink="stack">MI STACK</a>
+    <a mat-button routerLink="proyectos">PROYECTOS</a>
+    <a mat-button routerLink="contacto">CONTACTO</a>
+    </div>
+  </nav>
 </header>

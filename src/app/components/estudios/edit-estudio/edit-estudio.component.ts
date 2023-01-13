@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-estudio',
@@ -15,7 +16,8 @@ export class EditEstudioComponent {
   id!: number;
 
   constructor(private servEdu: EducacionService,
-    private activatedRoute: ActivatedRoute){
+    private activatedRoute: ActivatedRoute,
+    private router: Router){
       this.activatedRoute.paramMap.subscribe((parametros) => {
         this.id = parseInt(parametros.get('id') || '0');
         this.formulario = new FormGroup({
@@ -38,7 +40,16 @@ export class EditEstudioComponent {
      img: this.formulario.value.img
     }
     this.servEdu.edit(e).subscribe();
-    alert('se edito')
+    Swal.fire({
+      title: 'Datos editados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
+    this.router.navigate(['estudios']);
     }
 
 }

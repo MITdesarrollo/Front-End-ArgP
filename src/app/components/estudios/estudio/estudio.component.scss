@@ -48,7 +48,7 @@
                 white-space: nowrap;
                 border-right: 2px solid;
                 width: 15ch;
-
+                font-family: "Courier Prime", monospace;
                 animation: typing 2s steps(15),
                 blink .5s infinite  step-end alternate;
                 overflow: hidden;
@@ -70,7 +70,7 @@
         }
 
         .texto {
-            background-color: rgb(228, 180, 180, 0.7);
+            background-color: rgb(228, 180, 180, 0.8);
             border: 1px solid c.$rosaClaro;
             height: 100%;
             display: flex;

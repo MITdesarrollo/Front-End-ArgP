@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-exp',
@@ -15,8 +16,10 @@ export class EditExpComponent {
   id!: number;
 
 
-  constructor(private servExp: ExperienciaService,
-    private activatedRoute: ActivatedRoute){
+  constructor(
+    private servExp: ExperienciaService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router){
       this.activatedRoute.paramMap.subscribe((parametros) => {
         this.id = parseInt(parametros.get('id') || '0');
         this.formulario = new FormGroup({
@@ -46,6 +49,15 @@ export class EditExpComponent {
      url: this.formulario.value.url
     }
     this.servExp.edit(expe).subscribe();
-    alert('se edito')
+    Swal.fire({
+      title: 'Datos editados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
+    this.router.navigate(['exp']);
     }
 }

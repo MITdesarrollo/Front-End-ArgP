@@ -16,7 +16,7 @@ body {
 html {
   font-size: 16px;
 }
- 
+
 main{
 animation: test 300ms linear;
 }
@@ -28,12 +28,17 @@ animation: test 300ms linear;
     opacity: 1;
   }
 }
-.contenedor{
- background-image: url(https://res.cloudinary.com/dets0trss/image/upload/v1673236251/wallhaven-490733-1600x800_l0mvhf.jpg);
- background-repeat: no-repeat;
- background-size: cover;
- min-height: 90vh;
+.contenedor-background {
+  z-index: -1;
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  background-image: url(https://res.cloudinary.com/dets0trss/image/upload/v1673393010/technology-aesthetic-wallpapers-wallpaper-cave_fgupjy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+
 $rosaClaro: #f1dedc;
 $rosaFuerte:#e4b4b4;
 $violetaClaro:#adabb6;

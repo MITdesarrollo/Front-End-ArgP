@@ -3,7 +3,7 @@
     padding-top: 2em;
     .titulo{
         border: 2px solid c.$rosaFuerte;
-        background-color: c.$azulClaro;
+        background-color: c.$rosaFuerte;
         color: white;
         border-radius: 5px;
         width: 40%;
@@ -12,6 +12,17 @@
         align-items: center;
         margin-left: auto;
         margin-right: auto;
+
+        .title-right{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            img {
+                margin-left: .2rem;
+                height: 2em;
+              }
+           }
+
         span{
             display: block;
             color: white;
@@ -19,7 +30,7 @@
             white-space: nowrap;
             border-right: 2px solid;
             width: 21ch;
-
+            font-family: "Courier Prime", monospace;
             animation: typing 2s steps(21),
             blink .5s infinite  step-end alternate;
             overflow: hidden;
@@ -37,22 +48,26 @@
     .container{
         margin-top: .5rem;
         border: 2px solid c.$rosaFuerte;
-        background-color: c.$rosaFuerte;
+        background-color: rgb(127, 108, 119, 0.7);
         border-radius: 5px;
         width: 40%;
         display: flex;
         padding: 2rem;
         flex-wrap: wrap;
-        a{
-            list-style: none;
-            text-align: center;
-            color: white;
-            margin-top: .2rem;
-            }
+
+        .url-red{
+            a{
+                list-style: none;
+                text-align: center;
+                color: white;
+               
+                }
+        }
+        
         .icono{
             display: flex;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: .5rem;
             
             img{
                 background-color:c.$violetaClaro;

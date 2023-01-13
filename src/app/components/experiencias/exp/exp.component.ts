@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-exp',
@@ -30,6 +31,15 @@ export class ExpComponent implements OnInit {
       this.servExp.delete(id).subscribe((data) => console.log('se borro'));
     }
     this.experiencias = this.experiencias.filter((el) => el.id != id);
+    Swal.fire({
+      title: 'Datos eliminados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
   }
   editar(exp: Experiencia) {
     this.router.navigate([

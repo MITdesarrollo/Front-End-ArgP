@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contacto } from 'src/app/models/contacto';
 import { ContactoService } from 'src/app/services/contacto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-red',
@@ -21,9 +22,9 @@ export class AddRedComponent implements OnInit{
 
   ){
     this.formulario = new FormGroup({
-      nombre: new FormControl('',[]),
-      icono: new FormControl('',[]),
-      url: new FormControl('', [])
+      nombre: new FormControl('',[Validators.required]),
+      icono: new FormControl('',[Validators.required]),
+      url: new FormControl('', [Validators.required])
     });
 }
 ngOnInit(): void {
@@ -37,6 +38,15 @@ agregar(){
   }
   console.log(red);
   this.servContac.save(red).subscribe();
+  Swal.fire({
+    title: 'Datos editados correctamente',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  });
   this.router.navigate(['contacto']);
 }
 }

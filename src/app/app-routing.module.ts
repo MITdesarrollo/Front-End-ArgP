@@ -20,43 +20,46 @@ import { ProyectoComponent } from './components/proyectos/proyecto/proyecto.comp
 import { AddProyectoComponent } from './components/proyectos/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto/edit-proyecto.component';
 import { AddDatosComponent } from './components/sobre-mi/add-datos/add-datos.component';
+import { LoginComponent } from './components/login/login.component';
+import { AutenticacionGuard } from './guards/autenticacion.guard';
 
 const routes : Routes = [
-   
-  {path:'home' , component: HomeComponent }, 
+  {path:'login', component: LoginComponent},
+  
+  {path:'home' , component: HomeComponent, canActivate: [AutenticacionGuard] }, 
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'sobre-mi', component: DatosComponent},
+  {path: 'sobre-mi', component: DatosComponent, canActivate: [AutenticacionGuard]},
   {path: 'sobre-mi', children:[
     {path: 'edit-datos', component: EditDatosComponent},
     {path: 'add-datos', component: AddDatosComponent}
   ]},
  
-  {path:'estudios', component: EstudioComponent},
+  {path:'estudios', component: EstudioComponent, canActivate: [AutenticacionGuard]},
   {path:'estudios', children:[
     {path: 'add-estudio', component: AddEstudioComponent},
     {path: 'edit-estudio', component: EditEstudioComponent}
   ]},
-  {path:'contacto', component: RedComponent},
+  {path:'contacto', component: RedComponent, canActivate: [AutenticacionGuard]},
   {path:'contacto', children:[
     {path: 'add-red', component: AddRedComponent},
     {path: 'edit-red', component: EditRedComponent}
   ]},
-  {path:'proyectos', component: ProyectoComponent},
+  {path:'proyectos', component: ProyectoComponent, canActivate: [AutenticacionGuard]},
   {path:'proyectos', children:[
     {path: 'add-prod', component: AddProyectoComponent},
     {path: 'edit-prod', component: EditProyectoComponent}
   ]},
-  {path:'exp', component: ExpComponent},
+  {path:'exp', component: ExpComponent, canActivate: [AutenticacionGuard]},
   {path:'exp', children:[
     {path: 'add-exp', component: AddExpComponent},
     {path: 'edit-exp', component: EditExpComponent}
   ]},
-  {path: 'stack', component: StackComponent},
+  {path: 'stack', component: StackComponent, canActivate: [AutenticacionGuard]},
   {path: 'stack', children:[
   {path: 'add-skill', component: AddSkillComponent},
   {path: 'edit-skill', component: EditSkillComponent} 
   ]},
- 
+  {path: '', redirectTo:'home', pathMatch:'full'},
   {path: '**', component: Pagina404Component} 
 ];
 

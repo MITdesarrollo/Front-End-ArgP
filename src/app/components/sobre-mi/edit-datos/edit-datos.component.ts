@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/models/persona';
 import { PersonaService } from 'src/app/services/persona.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-datos',
@@ -41,7 +42,6 @@ ngOnInit(): void {
 
 
 editarDatos(datos: Persona){
-
   let dato: Persona = {
    id: this.id,
    nombre: this.fomularioDatos.value.nombre,
@@ -54,7 +54,16 @@ editarDatos(datos: Persona){
    nacimiento: this.fomularioDatos.value.nacimiento
   }
   this.servPersona.edit(dato).subscribe();
-  alert('se edito')
+  Swal.fire({
+    title: 'Datos editados correctamente',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
+  this.router.navigate(['sobre-mi'])
   }
 }
 

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-estudio',
@@ -18,11 +19,11 @@ export class AddEstudioComponent {
     private activaroute: ActivatedRoute
   ){
     this.formulario = new FormGroup({
-      titulo: new FormControl('',[]),
-      institucion: new FormControl('',[]),
-      inicio: new FormControl('',[]),
-      fin: new FormControl('',[]),
-      img: new FormControl('',[]),
+      titulo: new FormControl('',[Validators.required]),
+      institucion: new FormControl('',[Validators.required]),
+      inicio: new FormControl('',[Validators.required]),
+      fin: new FormControl('',[Validators.required]),
+      img: new FormControl('',[Validators.required]),
     });
   }
 
@@ -36,6 +37,15 @@ export class AddEstudioComponent {
       img: this.formulario.value.img
     }
     this.servEducacion.save(edu).subscribe();
+    Swal.fire({
+      title: 'Datos editados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
     this.router.navigate(['estudios']);
   }
 }

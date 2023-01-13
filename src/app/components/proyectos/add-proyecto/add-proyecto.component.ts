@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-proyecto',
@@ -19,12 +20,12 @@ export class AddProyectoComponent {
     private activaroute: ActivatedRoute
   ){
     this.formulario = new FormGroup({
-      nombre: new FormControl('',[]),
-      descripcion:new FormControl('',[]),
-      img: new FormControl('',[]),
-      inicio: new FormControl('',[]),
-      fin: new FormControl('',[]),
-      url: new FormControl('',[]),
+      nombre: new FormControl('',[Validators.required]),
+      descripcion:new FormControl('',[Validators.required]),
+      img: new FormControl('',[Validators.required]),
+      inicio: new FormControl('',[Validators.required]),
+      fin: new FormControl('',[Validators.required]),
+      url: new FormControl('',[Validators.required]),
     });
   }
 
@@ -40,6 +41,15 @@ export class AddProyectoComponent {
       url: this.formulario.value.url,
     }
     this.servProyecto.save(proyecto).subscribe();
+    Swal.fire({
+      title: 'Datos editados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
     this.router.navigate(['proyectos']);
   }
 }

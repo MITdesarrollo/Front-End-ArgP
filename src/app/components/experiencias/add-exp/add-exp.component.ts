@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -22,14 +23,14 @@ export class AddExpComponent {
     private activaroute: ActivatedRoute
   ){
     this.formulario = new FormGroup({
-      puesto: new FormControl('',[]),
-      empresa: new FormControl('',[]),
-      descripcion:new FormControl('',[]),
-      inicio: new FormControl('',[]),
-      fin: new FormControl('',[]),
-      img: new FormControl('',[]),
-      url: new FormControl('',[]),
-      activo: new FormControl('',[]),
+      puesto: new FormControl('',[Validators.required]),
+      empresa: new FormControl('',[Validators.required]),
+      descripcion:new FormControl('',[Validators.required]),
+      inicio: new FormControl('',[Validators.required]),
+      fin: new FormControl('',[Validators.required]),
+      img: new FormControl('',[Validators.required]),
+      url: new FormControl('',[Validators.required]),
+      activo: new FormControl('',[Validators.required]),
     });
   }
   agregar(){
@@ -45,6 +46,15 @@ export class AddExpComponent {
       activo: this.formulario.value.activo,
     }
     this.servExp.save(exp).subscribe();
+    Swal.fire({
+      title: 'Datos agregados correctamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
     this.router.navigate(['exp']);
   }
 }

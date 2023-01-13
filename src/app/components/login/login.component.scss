@@ -1,0 +1,86 @@
+@use "./src/app/app.component" as c;
+.cont-general{
+    padding: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    .inputs{
+        border: 1px solid c.$rosaFuerte;
+        background-color: rgba(236, 196, 220, 0.8);
+        border-radius: 5px;
+        padding: 1rem;
+            span{
+                display: block;
+                color: c.$violetaFuerte;
+                font-size: 1.5rem;
+                white-space: nowrap;
+                border-right: 1px solid;
+                width: 28ch;
+                margin-bottom: 1em;
+                animation: typing 2s steps(28),
+                blink .5s infinite  step-end alternate;
+                overflow: hidden;
+            } 
+            @keyframes typing {
+                from{ width: 0}
+            }
+            @keyframes blink {
+                50%{ border-color: transparent}
+            }    
+    }
+    mat-form-field{
+        width: 60%;
+        
+    }
+    .boton-go{
+        width: 2rem;
+        background-color: c.$rosaClaro;
+        font-family: "Courier Prime", monospace;
+        color: c.$violetaFuerte;
+    }
+}
+
+//medias
+@media screen and (max-width: 992px){
+    .cont-general{
+        width: 80%;
+        margin-top: 40%;
+        min-width: fit-content;
+        .inputs{
+            height: 400px;
+                span{
+                    font-size: 2rem;    
+                }    
+        }
+        mat-form-field{
+            width: 80%;   
+        }
+        .boton-go{
+            padding: 2rem;
+            width: 10rem;
+            font-size: 2rem;
+        }
+    }
+}
+@media screen and (max-width: 576px){
+    .cont-general{
+        width: 80%;
+        margin-top: 40%;
+        min-width: fit-content;
+        .inputs{
+            height: 300px;
+                span{
+                    font-size: 1rem;    
+                }    
+        }
+        mat-form-field{
+            width: 80%;   
+        }
+        .boton-go{
+            padding: 1rem;
+            width: 6rem;
+            font-size: 2rem;
+        }
+    }
+}
+
