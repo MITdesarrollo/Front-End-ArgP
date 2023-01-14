@@ -22,17 +22,17 @@
                   <h3>{{estu.inicio}} / {{estu.fin}}</h3>
             </div>
             <div class="edit-delete">
-              <button mat-icon-button type="submit"  (click)="delete(estu.id)">
+              <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="delete(estu.id)">
                 <mat-icon color="accent">delete</mat-icon>
               </button> 
-              <button mat-icon-button type="submit"  (click)=" editar(estu)">
+              <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)=" editar(estu)">
                 <mat-icon color="accent">edit</mat-icon>
               </button> 
             </div>
           </div>
       </div>
       <button mat-icon-button routerLink="add-estudio">
-        <mat-icon color="accent">add</mat-icon>
+        <mat-icon class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" color="accent">add</mat-icon>
        </button> 
 </div>
 </main>

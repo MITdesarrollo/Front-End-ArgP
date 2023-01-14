@@ -32,10 +32,10 @@
         </div> 
       </div>
       <div class="boton-agregar">
-        <button  mat-icon-button type="submit" (click)="editarDatos(datos[0])">
+        <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit" (click)="editarDatos(datos[0])">
           <mat-icon color="accent">edit</mat-icon>
         </button>
-        <button mat-icon-button routerLink="add-datos">
+        <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button routerLink="add-datos">
           <mat-icon color="accent">add</mat-icon>
          </button>
       </div> 

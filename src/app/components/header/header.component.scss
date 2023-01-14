@@ -1,146 +1,165 @@
-@use './src/app/app.component' as c;
+@use "./src/app/app.component" as c;
 
 .grid-container-header {
-	background-color: c.$violetaClaro;
-	width: 100%;
-	top: 0;
-	min-height: 60px;
+  background-color: c.$violetaClaro;
+  width: 100%;
+  top: 0;
+  min-height: 60px;
 }
 .left-header {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
-	.edit{
-		img{
-		width: 2rem;
-	    height: 2rem;
-	    &:hover {
-		transform: scale(1.3);
-		transition: all 0.3s ease;
-	    }
-		}
-	}
-	.menu-burg{
-		display: none;
-	}
-}
-
-.nombre_logo {
-	text-align: center;
-	color: white;
-	font-size: 1rem;
-	font-family: "Courier Prime", monospace;
-	
-}
-.icono_arg {
-    padding: .5rem;
-	border-radius: 10px;
-	width: 4rem;
-	height: 4rem;
-}
-.accesos_componentes {
-	display: flex;
-	justify-content: space-around;
-	border: 1PX solid c.$violetaFuerte;
-	a{  
-	 text-decoration: none;
-	 color: white;
-	}
-}
-.right-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  .right-header {
 	height: 100%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-}
-.iconos {
-	display: flex;
-	height: 100%;
-	align-items: center;
-}
-.link_red {
-	padding: 0 1rem 0 1rem;
-}
-.img_red {
-	width: 2.5rem;
-	height: 2.5rem;
-	&:hover {
+  }
+  .edit {
+	img {
+	  width: 2rem;
+	  height: 2rem;
+    margin-left: .5rem;
+	  &:hover {
 		transform: scale(1.3);
 		transition: all 0.3s ease;
+	  }
 	}
+	.icono-edit{
+		opacity: 0;
+		pointer-events: none;
+	}
+	.active-edit{
+		opacity: 1;
+		pointer-events: inherit;
+	}
+  }
+  .menu-burg {
+    display: none;
+  }
 }
- 
-//media 
-@media screen and (max-width: 992px){
-	
-.grid-container-header {
-	background-color: c.$violetaClaro;
-	width: 100%;
-	top: 0;
-	min-height: 60px;
-	
-	.left-header {
+
+.nombre_logo {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-family: "Courier Prime", monospace;
+}
+.icono_arg {
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 4rem;
+  height: 4rem;
+}
+.accesos_componentes {
+  .rutas{
+    display: flex;
+    justify-content: space-around;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  
+}
+
+.iconos {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.link_red {
+  padding: 0 1rem 0 1rem;
+}
+.img_red {
+  width: 2.5rem;
+  height: 2.5rem;
+  &:hover {
+    transform: scale(1.3);
+    transition: all 0.3s ease;
+  }
+}
+
+//media
+@media screen and (max-width: 992px) {
+  .grid-container-header {
+	display: grid;
+	grid-template-columns: repeat(12, 1 fr);
+    position: relative;
+    .menu-burg {
+      display: flex;
+    }
+  }
+  .nombre_logo {
+    display: none;
+  }
+  .active {
+    left: 0 !important;
+  }
+  .left-header {
+	grid-column: 1/13;
+	.right-header{
+		.iconos{
+			display: none;
+		}
+	}
+   }
+  .accesos_componentes {
+    position: absolute;
+	grid-row: 2/3;
+	grid-column: 1/13;
+	display: flex;
+	justify-content: space-around;
+    left: -100%;
+    transition: 500ms linear;
+    height: 100vh;
+    background-color: white;
+    width: 30%;
+    z-index: 2;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .grid-container-header {
+    .accesos_componentes {
+      width: 50%;
+      div {
+        a {
+          color: black;
+        }
+      }
+    }
+    .left-header {
+      .icono_arg {
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+      }
+	  .right-header {
+		.iconos {
+		  img {
+			width: 1.5rem;
+			height: 1.5rem;
+		  }
+		}
+	  }
+	  .menu-burg {
 		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		height: 100%;
-		.edit{
-			img{
-			width: 2rem;
-			height: 2rem;
-			&:hover {
-			transform: scale(1.3);
-			transition: all 0.3s ease;
-			}
-			}
+		img{
+		  width: 2rem;
+		  height:2rem;
 		}
-		.menu-burg{
-			display: flex;
-		}
-	}
-}
-
-
-.nombre_logo {
-	display: none;	
-}
-.icono_arg {
-    padding: .5rem;
-	border-radius: 10px;
-	width: 4rem;
-	height: 4rem;
-}
-.accesos_componentes {
-	display: flex;
-	justify-content: space-around;
-	border: 1PX solid c.$violetaFuerte;
-	a{  
-	 text-decoration: none;
-	 color: white;
-	}
-}
-.right-header {
-	height: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-.iconos {
-	display: flex;
-	height: 100%;
-	align-items: center;
-}
-.link_red {
-	padding: 0 1rem 0 1rem;
-}
-.img_red {
-	width: 2.5rem;
-	height: 2.5rem;
-	&:hover {
-		transform: scale(1.3);
-		transition: all 0.3s ease;
-	}
-}
- 
+	  }
+    }
+  }
 }

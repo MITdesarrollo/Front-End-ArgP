@@ -1,6 +1,6 @@
 <header class="grid-container-header">
   <div class="left-header">
-    <div class="menu-burg"><img src="https://res.cloudinary.com/dets0trss/image/upload/v1673572430/menu_aeqmy2.png" alt=""></div>
+    <div class="menu-burg"><img (click)="handleNavbar()" src="https://res.cloudinary.com/dets0trss/image/upload/v1673572430/menu_aeqmy2.png" alt=""></div>
     <div class="logo">
       <img routerLink="home" class="icono_arg" src="https://res.cloudinary.com/dets0trss/image/upload/v1673407031/__mnmfdx.png" />
       </div>
@@ -14,11 +14,16 @@
            </div>
       </div>
       <div class="edit">
-         <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil">
-      </div> 
+        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva && !userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil"> 
+        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673656212/guardar-el-archivo_luc0mr.png"> 
+        
+        <img routerLink="login"  class="icono-edit" [ngClass]="{'active-edit': !this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/login_apx03j.png" alt="editar perfil">
+       <img (click)="logout()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673655441/cerrar-sesion_ego6fb.png" alt="">
+      </div>
+       
   </div>
-  <nav class="accesos_componentes">
-    <div>
+  <nav class="accesos_componentes" [ngClass]="{'active': this.activateNav}">
+    <div class="rutas">
     <a mat-button routerLink="home">HOME</a>
     <a mat-button routerLink="sobre-mi">SOBRE MI</a>
     <a mat-button routerLink="estudios">ESTUDIOS</a>

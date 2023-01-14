@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,7 +15,8 @@ estudios!: Educacion[];
 
 constructor(
   private router: Router,
-  private servEdu: EducacionService
+  private servEdu: EducacionService,
+  protected usuarioService: UsuarioService
 ){
 
 }

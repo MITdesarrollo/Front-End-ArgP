@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environments } from 'src/environments/environments';
 import { Sesion } from '../models/sesion';
@@ -9,15 +10,20 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
- 
+
+ public enableEdit: boolean = false;
+
   sesionSubject!: BehaviorSubject<Sesion>;
+  
   constructor(
     private http: HttpClient,
+    private router : Router
   ) {
     const sesion: Sesion = {
       sesionActiva: false,
     };
     this.sesionSubject = new BehaviorSubject(sesion);
+    
    }
 
   private apiURL = environments.apiURL;
@@ -41,13 +47,40 @@ export class UsuarioService {
   public edit(user: Usuario):Observable<any>{
     return this.http.put<any>(this.apiURL + 'proyecto/edit', user);
     }
-  login(email: string, password: string, id:number){
+
+
+  login(email: string | null){
     const sesion: Sesion = {
       sesionActiva: true
     };
     this.sesionSubject.next(sesion);
   }
+  checkLocalStorage(){
+  let localStoUser = localStorage.getItem('sesion');
+  
+  
+  if(localStoUser){
+    localStoUser = JSON.parse(localStoUser)
+    this.lista().subscribe(el => {
+   
+      
+      let findUser = el.find(el => el.email == localStoUser)
+      if(findUser){
+        this.login(
+          localStoUser
+        )
+      this.router.navigate(['home'])
+      }
+      
+    })
+  }
+}
+
   obtenerDatosSesion(): Observable<Sesion> {
     return this.sesionSubject.asObservable();
   }
+  onEdit(): void{
+  this.enableEdit = !this.enableEdit
+  console.log(this.enableEdit);
+   }
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Proyecto } from 'src/app/models/proyecto';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,6 +17,7 @@ proyectos!: Proyecto[];
 constructor(
   private router: Router,
   private servProyecto: ProyectoService,
+  protected usuarioService: UsuarioService
 
 ){}
 

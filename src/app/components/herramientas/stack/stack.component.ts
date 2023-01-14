@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Herramienta } from 'src/app/models/herramienta';
 import { HerramientaService } from 'src/app/services/herramienta.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,7 +15,8 @@ stack!: Herramienta[];
 
 constructor(
   private herrServ : HerramientaService,
-  private router:Router){}
+  private router:Router,
+  protected usuarioService: UsuarioService){}
 
   ngOnInit(): void {
     this.getHerramientas();

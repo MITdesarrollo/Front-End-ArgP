@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +13,9 @@ import Swal from 'sweetalert2';
 export class ExpComponent implements OnInit {
   experiencias!: Experiencia[];
 
-  constructor(private servExp: ExperienciaService, private router: Router) {}
+  constructor(private servExp: ExperienciaService, 
+    private router: Router,
+    protected usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
     this.getExp();

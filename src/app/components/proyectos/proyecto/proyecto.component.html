@@ -14,7 +14,7 @@
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
         alt="expand window" />
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png" alt="close window" />
-      <button mat-icon-button routerLink="add-prod">
+      <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button routerLink="add-prod">
         <mat-icon color="accent">add</mat-icon>
       </button>
     </div>
@@ -26,10 +26,10 @@
         <div class="carousel-item active" *ngFor="let image of proyectos; let i = index" [ngClass]="{'active': i == 0}">
           <img [src]="image.img" class="d-block w-100">
           <div class="edit-delete">
-            <button mat-icon-button type="submit"  (click)="delete(image.id)">
+            <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="delete(image.id)">
               <mat-icon color="accent">delete</mat-icon>
           </button> 
-          <button mat-icon-button type="submit"  (click)="editarProyecto(image)">
+          <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="editarProyecto(image)">
               <mat-icon color="accent">edit</mat-icon>
           </button>
           </div>

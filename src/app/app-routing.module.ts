@@ -26,35 +26,35 @@ import { AutenticacionGuard } from './guards/autenticacion.guard';
 const routes : Routes = [
   {path:'login', component: LoginComponent},
   
-  {path:'home' , component: HomeComponent, canActivate: [AutenticacionGuard] }, 
+  {path:'home' , component: HomeComponent}, 
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'sobre-mi', component: DatosComponent, canActivate: [AutenticacionGuard]},
+  {path: 'sobre-mi', component: DatosComponent},
   {path: 'sobre-mi', children:[
     {path: 'edit-datos', component: EditDatosComponent},
     {path: 'add-datos', component: AddDatosComponent}
   ]},
  
-  {path:'estudios', component: EstudioComponent, canActivate: [AutenticacionGuard]},
+  {path:'estudios', component: EstudioComponent},
   {path:'estudios', children:[
     {path: 'add-estudio', component: AddEstudioComponent},
     {path: 'edit-estudio', component: EditEstudioComponent}
   ]},
-  {path:'contacto', component: RedComponent, canActivate: [AutenticacionGuard]},
+  {path:'contacto', component: RedComponent},
   {path:'contacto', children:[
     {path: 'add-red', component: AddRedComponent},
     {path: 'edit-red', component: EditRedComponent}
   ]},
-  {path:'proyectos', component: ProyectoComponent, canActivate: [AutenticacionGuard]},
+  {path:'proyectos', component: ProyectoComponent},
   {path:'proyectos', children:[
     {path: 'add-prod', component: AddProyectoComponent},
     {path: 'edit-prod', component: EditProyectoComponent}
   ]},
-  {path:'exp', component: ExpComponent, canActivate: [AutenticacionGuard]},
+  {path:'exp', component: ExpComponent},
   {path:'exp', children:[
     {path: 'add-exp', component: AddExpComponent},
     {path: 'edit-exp', component: EditExpComponent}
   ]},
-  {path: 'stack', component: StackComponent, canActivate: [AutenticacionGuard]},
+  {path: 'stack', component: StackComponent},
   {path: 'stack', children:[
   {path: 'add-skill', component: AddSkillComponent},
   {path: 'edit-skill', component: EditSkillComponent} 

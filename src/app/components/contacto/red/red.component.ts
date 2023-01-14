@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {  ActivatedRoute, Router } from '@angular/router';
 import { Contacto } from 'src/app/models/contacto';
 import { ContactoService } from 'src/app/services/contacto.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,6 +16,7 @@ export class RedComponent implements OnInit{
   constructor(
     private servCont: ContactoService,
     private router: Router,
+    protected usuarioService: UsuarioService
 
   ){
 

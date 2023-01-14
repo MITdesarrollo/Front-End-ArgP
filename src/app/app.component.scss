@@ -37,7 +37,17 @@ animation: test 300ms linear;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.off-edit{
+ opacity: 0;
+ pointer-events: none;
+}
+.active-edit{
+  opacity: 1;
+  pointer-events: inherit;
+}
+.display-none{
+  display: none;
+}
 
 $rosaClaro: #f1dedc;
 $rosaFuerte:#e4b4b4;

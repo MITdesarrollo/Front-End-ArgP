@@ -18,7 +18,8 @@ export class AppComponent implements OnInit{
   ){}
   ngOnInit(): void {
     this.getDatos();
-    this.sesionUser.obtenerDatosSesion().subscribe(data => this.sesion = data)
+    this.sesionUser.obtenerDatosSesion().subscribe(data => this.sesion = data);
+    this.sesionUser.checkLocalStorage();
    }
   getDatos(): void{
     this.servRedes.list().subscribe(
