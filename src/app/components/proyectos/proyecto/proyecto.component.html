@@ -5,9 +5,6 @@
 
   <div class="window__title">
     <span>&lt;MIS PROYECTOS/&gt;</span>
-    <div *ngFor="let image of proyectos">
-      <a [href]="image.url">{{image.url}}</a>
-    </div>
     <div class="title-right">
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
         alt="minimize window" />
@@ -26,6 +23,7 @@
         <div class="carousel-item active" *ngFor="let image of proyectos; let i = index" [ngClass]="{'active': i == 0}">
           <img [src]="image.img" class="d-block w-100">
           <div class="edit-delete">
+            <a [href]="image.url">{{image.nombre}}</a>
             <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="delete(image.id)">
               <mat-icon color="accent">delete</mat-icon>
           </button> 

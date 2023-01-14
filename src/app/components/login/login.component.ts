@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { getMatIconFailedToSanitizeUrlError } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -65,5 +66,3 @@ export class LoginComponent implements OnInit{
 
 
 
-/* this.userService.lista().subscribe(data=>{
-  if(data[0].email == userEmail && data[0].password == userPassword) */

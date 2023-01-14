@@ -45,7 +45,7 @@ export class UsuarioService {
     }
 
   public edit(user: Usuario):Observable<any>{
-    return this.http.put<any>(this.apiURL + 'proyecto/edit', user);
+    return this.http.put<any>(this.apiURL + 'usuario/edit', user);
     }
 
 

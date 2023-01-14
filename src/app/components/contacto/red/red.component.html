@@ -22,7 +22,7 @@
     <img [src]="red.icono" alt="img institucion">
   </div>
   <div class="url-red">
-    <a [href]="red.url"></a>
+    <a [href]="red.url">{{red.nombre}}</a>
   </div>
   <div class="delete-edit">
         <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit" (click)="delete(red.id)">

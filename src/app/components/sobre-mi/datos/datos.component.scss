@@ -7,7 +7,6 @@
   margin-right: auto;
   width: 85%;
   display: flex;
- 
   .descripcion {
     width: 60%;
   }
@@ -17,14 +16,14 @@
   padding: 0rem 2rem 2rem 2rem;
   display: flex;
   justify-content: space-around;
-
   .window {
     padding: 1em;
     background-color: c.$rosaClaro;
     margin: 0;
     height: fit-content;
     border-radius: 5px;
-
+    width: 20%;
+    min-width: 300px;
     &__title {
       background: c.$rosaFuerte;
       padding: 0.5em;
@@ -77,6 +76,8 @@
     -moz-box-shadow: 24px 24px 0px -3px c.$marron;
     border-radius: 10px;
     color: white;
+    width: 80%;
+    min-width: fit-content;
     span{
       display: block;
       color: white;
