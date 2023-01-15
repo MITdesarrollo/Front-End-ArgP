@@ -34,7 +34,7 @@
             animation: typing 2s steps(21),
             blink .5s infinite  step-end alternate;
             overflow: hidden;
-        } 
+        }
         @keyframes typing {
             from{ width: 0}
         }
@@ -56,25 +56,27 @@
         flex-wrap: wrap;
 
         .url-red{
+          display: flex;
+          justify-content: center;
             a{
                 list-style: none;
                 text-align: center;
                 color: white;
-               
+
                 }
         }
-        
+
         .icono{
             display: flex;
             justify-content: center;
             margin-top: .5rem;
-            
+
             img{
                 background-color:c.$violetaClaro;
                 padding: .5rem;
                 border-radius: 5px;
                 width: 5rem;
-            } 
+            }
         }
         .delete-edit{
             display: flex;
@@ -85,4 +87,48 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 1400px) {
+  .cont-general{
+    .titulo {
+      width: 60%;
+    }
+    .container{
+      width: 60%;
+      .url-red{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px){
+  .cont-general{
+    .titulo {
+      width: 80%;
+    }
+    .container{
+      width: 80%;
+      .url-red{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cont-general{
+    .titulo {
+      width: 90%;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      padding: 0;
+    }
+  }
 }

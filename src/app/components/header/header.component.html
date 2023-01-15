@@ -10,15 +10,15 @@
       <div class="right-header">
         <!-- redes editables -->
            <div class="iconos" *ngFor="let icono of redes">
-            <a class="link_red" [href]="icono.url"><img class="img_red" [src]="icono.icono"[alt]="icono.nombre"></a>
+            <a target="_blank" class="link_red" [href]="icono.url"><img class="img_red" [src]="icono.icono"[alt]="icono.nombre"></a>
            </div>
       </div>
       <div class="edit">
         <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva && !userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil"> 
-        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673656212/guardar-el-archivo_luc0mr.png"> 
+        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673656212/guardar-el-archivo_luc0mr.png" alt="salir de edicion"> 
         
-        <img routerLink="login"  class="icono-edit" [ngClass]="{'active-edit': !this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/login_apx03j.png" alt="editar perfil">
-       <img (click)="logout()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673655441/cerrar-sesion_ego6fb.png" alt="">
+        <img routerLink="login"  class="icono-edit" [ngClass]="{'active-edit': !this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/login_apx03j.png" alt="login">
+       <img (click)="logout()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673655441/cerrar-sesion_ego6fb.png" alt="logout">
       </div>
        
   </div>

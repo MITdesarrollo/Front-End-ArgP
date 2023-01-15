@@ -1,85 +1,129 @@
+@media screen and (max-width: 1400px) {
+  .container-main-a {
+    .window {
+      width: 95%;
+      height: auto;
+
+      &__screen {
+        .screen-title {
+          h1 {
+            font-size: 5rem;
+          }
+
+        }
+
+        .screen-name {
+          h1 {
+            font-size: 3rem;
+          }
+          h3 {
+            font-size: 2.5rem;
+          }
+
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 992px) {
     .container-main-a {
       .window {
-        width: 100%;
         height: auto;
-  
+
         &__screen {
           .screen-title {
-            font-size: 3rem;
+            h1 {
+              font-size: 4rem;
+            }
           }
-  
+
           .screen-name {
-            font-size: 2rem;
+            h1 {
+              font-size: 2.5rem;
+            }
+            h3 {
+              font-size: 2rem;
+            }
+
           }
         }
       }
     }
   }
-  
+
   @media screen and (max-width: 576px) {
     .container-main-a {
       .window {
-  
         &__title {
-          font-size: 1rem;
-  
+          .title-left {
+            display: flex;
+            align-items: center;
+            h2 {
+              margin: 0;
+              font-size: 1rem;
+            }
+          }
+
+          .title-mid {
+            justify-content: center;
+            width: 40%;
+          }
+
           .title-right {
             img {
-              width: 2rem;
-              height: 2rem;
+              width: 1.5rem;
+              height: 1.5rem;
             }
           }
         }
-  
-  
+
+        &__menu {
+          padding: .1em;
+          span {
+            font-size: 1rem;
+          }
+        }
+
         &__screen {
-  
-  
-          #scrollbar-style-x {
-            padding: 1em;
-          }
-  
+          width: 100%;
+
           #scrollbar-style-x::before {
-            padding: 1em;
-            width: 6em;
+            width: 30%;
           }
-  
-          #scrollbar-style-y {
-            padding: 1em;
-          }
-  
-          #scrollbar-style-y::before {
-            padding: 1em;
-            height: 6em;
-          }
-  
+
           #scrollbar-arrow-x {
             img {
-              width: 16px;
-              height: 16px;
+              margin-left: .5rem;
             }
           }
-  
-          #scrollbar-arrow-y {
-            img {
-  
-              width: 16px;
-              height: 16px;
-            }
-          }
-  
+
           .screen-title {
-            padding-bottom: 3em;
-            font-size: 2.5rem;
+            padding: 1em 1em 1em 1em;
+
+            h1 {
+              font-size: 2rem;
+            }
           }
-  
+
           .screen-name {
-            font-size: 1.7rem;
-            padding-bottom: 10em;
+              text-align: center;
+            h1{
+              font-size: 2rem;
+            }
+
+            h3{
+              margin-top: 1.5rem;
+
+            }
+
+            #second-title {
+              font-size: 2rem;
+              padding-left: 6em;
+              margin-top: 3em;
+            }
           }
         }
       }
     }
   }
-  

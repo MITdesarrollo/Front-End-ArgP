@@ -19,7 +19,10 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 0.2em;
-
+      p{
+        color: white;
+        font-family: "Courier Prime", monospace;
+      }
       span{
         display: block;
         color: white;
@@ -69,7 +72,7 @@
         }
        .edit-delete{
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         mat-icon{
           color: c.$violetaFuerte;
         }

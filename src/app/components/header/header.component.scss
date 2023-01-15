@@ -6,36 +6,51 @@
   top: 0;
   min-height: 60px;
 }
+
 .left-header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100%;
+
   .right-header {
-	height: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
+
   .edit {
-	img {
-	  width: 2rem;
-	  height: 2rem;
-    margin-left: .5rem;
-	  &:hover {
-		transform: scale(1.3);
-		transition: all 0.3s ease;
-	  }
-	}
-	.icono-edit{
-		opacity: 0;
-		pointer-events: none;
-	}
-	.active-edit{
-		opacity: 1;
-		pointer-events: inherit;
-	}
+    display: flex;
+    .display-none {
+      display: none;
+    }
+    .show {
+      display: inherit;
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      margin-left: .5rem;
+
+      &:hover {
+        transform: scale(1.3);
+        transition: all 0.3s ease;
+      }
+    }
+
+    .icono-edit {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .active-edit {
+      opacity: 1;
+      pointer-events: inherit;
+    }
   }
+
   .menu-burg {
     display: none;
   }
@@ -47,22 +62,25 @@
   font-size: 1rem;
   font-family: "Courier Prime", monospace;
 }
+
 .icono_arg {
   padding: 0.5rem;
   border-radius: 10px;
   width: 4rem;
   height: 4rem;
 }
+
 .accesos_componentes {
-  .rutas{
+  .rutas {
     display: flex;
     justify-content: space-around;
+
     a {
       text-decoration: none;
       color: white;
     }
   }
-  
+
 }
 
 .iconos {
@@ -70,12 +88,15 @@
   height: 100%;
   align-items: center;
 }
+
 .link_red {
   padding: 0 1rem 0 1rem;
 }
+
 .img_red {
   width: 2.5rem;
   height: 2.5rem;
+
   &:hover {
     transform: scale(1.3);
     transition: all 0.3s ease;
@@ -85,12 +106,9 @@
 //media
 @media screen and (max-width: 992px) {
   .grid-container-header {
-	display: grid;
-	grid-template-columns: repeat(12, 1 fr);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     position: relative;
-    .menu-burg {
-      display: flex;
-    }
   }
   .nombre_logo {
     display: none;
@@ -99,67 +117,87 @@
     left: 0 !important;
   }
   .left-header {
-	grid-column: 1/13;
-	.right-header{
-		.iconos{
-			display: none;
-		}
-	}
-   }
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1/13;
+
+    .menu-burg {
+      grid-column: 1 / 2;
+      display: flex;
+      img {
+        width: 3rem;
+        margin-left: 1rem;
+      }
+    }
+
+    .edit {
+      grid-column: 11 / 13;
+    }
+
+    .logo {
+      grid-column: 2 / 3;
+    }
+
+    .right-header {
+      .iconos {
+        display: none;
+      }
+    }
+  }
   .accesos_componentes {
     position: absolute;
-	grid-row: 2/3;
-	grid-column: 1/13;
-	display: flex;
-	justify-content: space-around;
+    grid-row: 2/3;
+    grid-column: 1/13;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
     left: -100%;
     transition: 500ms linear;
     height: 100vh;
-    background-color: white;
+    background-color: c.$rosaFuerte;
     width: 30%;
     z-index: 2;
+
     div {
+      height: 40%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+
       a {
-        color: black;
+        font-family: "Courier Prime", monospace;
+        font-size: 1.5rem;
+      }
+
+      a::after {
+        content: '';
+        position: absolute;
+        height: 2.5px;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        width: 0;
+        background-color: c.$rosaClaro;
+        transition: all 300ms linear;
+      }
+
+      a:hover::after {
+        left: 0;
+        width: 100%;
+        opacity: 1;
       }
     }
   }
 }
 
 @media screen and (max-width: 576px) {
-  .grid-container-header {
-    .accesos_componentes {
-      width: 50%;
-      div {
-        a {
-          color: black;
-        }
-      }
-    }
-    .left-header {
-      .icono_arg {
-        padding: 0;
-        width: 2rem;
-        height: 2rem;
-      }
-	  .right-header {
-		.iconos {
-		  img {
-			width: 1.5rem;
-			height: 1.5rem;
-		  }
-		}
-	  }
-	  .menu-burg {
-		display: flex;
-		img{
-		  width: 2rem;
-		  height:2rem;
-		}
-	  }
+  .left-header {
+    .edit {
+      grid-column: 8 / 10;
     }
   }
+  .accesos_componentes {
+    width: 80%;
+  }
+
 }

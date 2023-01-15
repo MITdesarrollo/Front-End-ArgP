@@ -5,6 +5,7 @@
 
   <div class="window__title">
     <span>&lt;MIS PROYECTOS/&gt;</span>
+    <p>Clickea en la imagen!</p>
     <div class="title-right">
       <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
         alt="minimize window" />
@@ -21,15 +22,16 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" *ngFor="let image of proyectos; let i = index" [ngClass]="{'active': i == 0}">
-          <img [src]="image.img" class="d-block w-100">
+         <a  target="_blank" [href]="image.url"><img [src]="image.img" class="d-block w-100"></a> 
           <div class="edit-delete">
-            <a [href]="image.url">{{image.nombre}}</a>
-            <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="delete(image.id)">
-              <mat-icon color="accent">delete</mat-icon>
-          </button> 
-          <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="editarProyecto(image)">
-              <mat-icon color="accent">edit</mat-icon>
-          </button>
+            <div>
+              <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="delete(image.id)">
+                <mat-icon color="accent">delete</mat-icon>
+              </button> 
+              <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit"  (click)="editarProyecto(image)">
+                <mat-icon color="accent">edit</mat-icon>
+              </button>
+            </div>
           </div>
         </div>
       </div>

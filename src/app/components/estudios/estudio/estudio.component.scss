@@ -1,117 +1,175 @@
 @use './src/app/app.component' as c;
 
 .cont-estudios {
-    padding-top: 2em;
+  padding-top: 2em;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+
+  .icono-b {
+    border: 2px solid c.$rosaFuerte;
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: white;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  mat-icon {
+    color: white;
+  }
+
+  .window {
+    width: 100%;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+    flex-direction: column;
 
-        .icono-b {
-            border: 2px solid c.$rosaFuerte;
-            padding: 2rem;
-            border-radius: 5px;
-            background-color: white;
-    
-            img {
-                width: 100%;
-    
-            }
-    
-        } 
-        
-        mat-icon{
-            color: white;
-        }
-    
-    
-    .window {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-
-        mat-icon{
-            color: white;
-            }
-
-        .bar {
-            display: flex;
-            justify-content: space-between;
-            background: c.$violetaClaro;
-            border: 1px solid c.$rosaFuerte;
-            align-items: center;
-            border-radius: 5px;
-            span{
-                display: block;
-                color: white;
-                font-size: 1.5rem;
-                white-space: nowrap;
-                border-right: 2px solid;
-                width: 15ch;
-                font-family: "Courier Prime", monospace;
-                animation: typing 2s steps(15),
-                blink .5s infinite  step-end alternate;
-                overflow: hidden;
-            } 
-            @keyframes typing {
-                from{ width: 0}
-            }
-            @keyframes blink {
-                50%{ border-color: transparent}
-            }
-            .img-barra {
-
-                img {
-                    width: 2rem;
-                    padding: .3rem;
-                }
-            }
-
-        }
-
-        .texto {
-            background-color: rgb(228, 180, 180, 0.8);
-            border: 1px solid c.$rosaClaro;
-            height: 100%;
-            display: flex;
-            justify-content: space-around;
-            padding: 1rem;
-            border-radius: 5px;
-            
-            .icono {
-                border: 2px solid c.$rosaFuerte;
-                border-radius: 5px;
-                background-color: white;
-                width: 20%;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    
-                }
-            }
-            .edit-delete{
-                mat-icon{
-                    color: white;
-                    }
-            }
-
-            .dato_estudios{
-                color: c.$violetaFuerte;
-                text-align: left;
-                h3{
-                    font-size: 1rem;
-                    color: white;
-                }
-                 
-                h2{
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: c.$violetaFuerte;
-                }
-                
-            }
-            
-        }
+    mat-icon {
+      color: white;
     }
 
+    .bar {
+      display: flex;
+      justify-content: space-between;
+      background: c.$violetaClaro;
+      border: 1px solid c.$rosaFuerte;
+      align-items: center;
+      border-radius: 5px;
+
+      span {
+        display: block;
+        color: white;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        border-right: 2px solid;
+        width: 15ch;
+        font-family: "Courier Prime", monospace;
+        animation: typing 2s steps(15),
+        blink .5s infinite step-end alternate;
+        overflow: hidden;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent
+        }
+      }
+
+      .img-barra {
+
+        img {
+          width: 2rem;
+          padding: .3rem;
+        }
+      }
+    }
+
+    .texto {
+      background-color: rgb(228, 180, 180, 0.8);
+      border: 1px solid c.$rosaClaro;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      border-radius: 5px;
+
+      .icono {
+        border: 2px solid c.$rosaFuerte;
+        border-radius: 5px;
+        background-color: white;
+        width: 20%;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+
+      .edit-delete {
+        mat-icon {
+          color: white;
+        }
+      }
+
+      .dato_estudios {
+        color: c.$violetaFuerte;
+        text-align: left;
+
+        h3 {
+          font-size: 1rem;
+          color: white;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: c.$violetaFuerte;
+        }
+
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cont-estudios {
+    .window {
+      .texto {
+        .icono {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .cont-estudios {
+    display: grid;
+    width: 90%;
+
+    .window {
+      .texto {
+        justify-content: space-around;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cont-estudios {
+    display: grid;
+    width: 90%;
+
+    .window {
+      .texto {
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1rem;
+        border-radius: 5px;
+        .icono {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
 }
