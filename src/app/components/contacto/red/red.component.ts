@@ -32,9 +32,7 @@ export class RedComponent implements OnInit{
 
  delete(id:number){
   if(id != undefined){
-    this.servCont.delete(id).subscribe(
-      data => console.log("se borro")
-    )
+    this.servCont.delete(id).subscribe()
   }
   this.redes = this.redes.filter(el => el.id != id);
   Swal.fire({

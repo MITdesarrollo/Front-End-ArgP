@@ -32,9 +32,7 @@ getEstudios(): void{
 
 delete(id:number){
   if(id != undefined){
-    this.servEdu.delete(id).subscribe(
-      data => console.log("se borro")
-    )
+    this.servEdu.delete(id).subscribe()
   }
   this.estudios = this.estudios.filter(el => el.id != id);
   Swal.fire({

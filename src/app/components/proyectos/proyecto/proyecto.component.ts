@@ -63,8 +63,6 @@ editarProyecto(proyecto: Proyecto) {
     url: proyecto.url
     },
   ]);
-  console.log("este log" + proyecto);
-
 }
 }
 

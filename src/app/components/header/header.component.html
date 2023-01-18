@@ -14,11 +14,11 @@
            </div>
       </div>
       <div class="edit">
-        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva && !userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil"> 
-        <img (click)="onEdit()" class="icono-edit" [ngClass]="{'active-edit': userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673656212/guardar-el-archivo_luc0mr.png" alt="salir de edicion"> 
+        <img (click)="onEdit()" class="display-none" [ngClass]="{'show': this.sesion.sesionActiva && !userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/editar_yo6ldx.png" alt="editar perfil"> 
+        <img (click)="onEdit()" class="display-none" [ngClass]="{'show': userServ.enableEdit}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673656212/guardar-el-archivo_luc0mr.png" alt="salir de edicion"> 
         
-        <img routerLink="login"  class="icono-edit" [ngClass]="{'active-edit': !this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/login_apx03j.png" alt="login">
-       <img (click)="logout()" class="icono-edit" [ngClass]="{'active-edit': this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673655441/cerrar-sesion_ego6fb.png" alt="logout">
+        <img routerLink="login"  class="display-none" [ngClass]="{'show': !this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/login_apx03j.png" alt="login">
+       <img (click)="logout()" class="display-none" [ngClass]="{'show': this.sesion.sesionActiva}" src="https://res.cloudinary.com/dets0trss/image/upload/v1673655441/cerrar-sesion_ego6fb.png" alt="logout">
       </div>
        
   </div>

@@ -62,8 +62,6 @@ export class UsuarioService {
   if(localStoUser){
     localStoUser = JSON.parse(localStoUser)
     this.lista().subscribe(el => {
-   
-      
       let findUser = el.find(el => el.email == localStoUser)
       if(findUser){
         this.login(
@@ -75,12 +73,10 @@ export class UsuarioService {
     })
   }
 }
-
   obtenerDatosSesion(): Observable<Sesion> {
     return this.sesionSubject.asObservable();
   }
   onEdit(): void{
   this.enableEdit = !this.enableEdit
-  console.log(this.enableEdit);
    }
   }

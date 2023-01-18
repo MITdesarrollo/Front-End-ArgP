@@ -40,7 +40,6 @@ ngOnInit(): void {
 
 }
 
-
 editarDatos(datos: Persona){
   let dato: Persona = {
    id: this.id,
@@ -53,7 +52,7 @@ editarDatos(datos: Persona){
    curriculum: this.fomularioDatos.value.curriculum,
    nacimiento: this.fomularioDatos.value.nacimiento
   }
-  this.servPersona.edit(dato).subscribe();
+  this.servPersona.edit(dato).subscribe(data => console.log(data));
   Swal.fire({
     title: 'Datos editados correctamente',
     showClass: {

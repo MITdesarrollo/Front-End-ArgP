@@ -23,7 +23,6 @@ export class EditProyectoComponent {
     ){
 
     this.activateRoute.paramMap.subscribe((parametros)=>{
-      console.log(parametros);
 
     this.id = parseInt(parametros.get('id') || '')
     this.fomularioProyecto =  new FormGroup({

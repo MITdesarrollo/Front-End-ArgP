@@ -23,15 +23,13 @@ export class ExpComponent implements OnInit {
 
   getExp(): void {
     this.servExp.list().subscribe((data) => {
-      console.log(data);
-
       (this.experiencias = data)
     });
 
   }
   delete(id: number) {
     if (id != undefined) {
-      this.servExp.delete(id).subscribe((data) => console.log('se borro'));
+      this.servExp.delete(id).subscribe();
     }
     this.experiencias = this.experiencias.filter((el) => el.id != id);
     Swal.fire({

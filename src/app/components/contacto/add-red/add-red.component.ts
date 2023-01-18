@@ -36,7 +36,6 @@ agregar(){
     icono: this.formulario.value.icono,
     url: this.formulario.value.url
   }
-  console.log(red);
   this.servContac.save(red).subscribe();
   Swal.fire({
     title: 'Datos editados correctamente',

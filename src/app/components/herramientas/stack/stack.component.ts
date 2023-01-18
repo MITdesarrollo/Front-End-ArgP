@@ -29,7 +29,7 @@ getHerramientas(): void{
 
 delete(id: number) {
   if (id != undefined) {
-    this.herrServ.delete(id).subscribe((data) => console.log('se borro'));
+    this.herrServ.delete(id).subscribe();
   }
   this.stack = this.stack.filter((el) => el.id != id);
   Swal.fire({

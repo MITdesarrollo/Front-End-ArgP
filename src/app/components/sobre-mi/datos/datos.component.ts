@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { Persona } from 'src/app/models/persona';
 import { PersonaService } from 'src/app/services/persona.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -18,16 +19,18 @@ export class DatosComponent  implements OnInit{
    private serviPerso : PersonaService,
    private router: Router,
    protected usuarioService: UsuarioService){
+ 
    }
 ngOnInit(): void {
  this.getDatos();
 }
 
-getDatos(): void{
+getDatos(){
  this.serviPerso.lista().subscribe(
    data =>  this.datos = data
  )
 }
+
 editarDatos(datos: Persona){
   this.router.navigate([
     'sobre-mi/edit-datos',
