@@ -51,6 +51,6 @@ this.activatedRoute.paramMap.subscribe((parametros) => {
     popup: 'animate__animated animate__fadeOutUp'
   }
 });
-this.router.navigate(['contacto']);
+this.servContc.list().subscribe(data => this.router.navigate(['contacto']))
  }
 }

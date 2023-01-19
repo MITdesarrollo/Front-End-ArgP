@@ -50,6 +50,6 @@ export class AddProyectoComponent {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-    this.router.navigate(['proyectos']);
+    this.servProyecto.lista().subscribe(data => { this.router.navigate(['proyectos'])})
   }
 }

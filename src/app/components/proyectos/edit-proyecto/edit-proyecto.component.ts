@@ -58,6 +58,6 @@ export class EditProyectoComponent {
         popup: 'animate__animated animate__fadeOutUp'
       }
     })
-    this.router.navigate(['proyectos'])
+    this.servProy.lista().subscribe(data => { this.router.navigate(['proyectos'])})
     }
 }

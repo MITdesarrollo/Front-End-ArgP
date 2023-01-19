@@ -37,7 +37,6 @@ handleNavbar(){
 
 onEdit(){
   this.userServ.onEdit();
-  this.router.navigate(['sobre-mi'])
 }
 
 logout(){

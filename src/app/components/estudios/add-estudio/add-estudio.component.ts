@@ -46,6 +46,6 @@ export class AddEstudioComponent {
         popup: 'animate__animated animate__fadeOutUp'
       }
     });
-    this.router.navigate(['estudios']);
+    this.servEducacion.list().subscribe(data =>  this.router.navigate(['estudios']))
   }
 }

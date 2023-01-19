@@ -5,39 +5,60 @@
         <div class="window">
           <div class="window__title">
             <div class="title-right">
-              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
-                   alt="minimize window"/>
-              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
-                   alt="expand window"/>
-              <img src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png"
-                   alt="close window"/>
+              <img
+                src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/minimizar_typ0ym.png"
+                alt="minimize window"
+              />
+              <img
+                src="https://res.cloudinary.com/dets0trss/image/upload/v1672774927/pestanas_oabiix.png"
+                alt="expand window"
+              />
+              <img
+                src="https://res.cloudinary.com/dets0trss/image/upload/v1672774926/close_u25yql.png"
+                alt="close window"
+              />
             </div>
           </div>
           <div class="window__screen_user">
             <div *ngFor="let dato of datos">
-              <img [src]="dato.img"/>
+              <img [src]="dato.img" />
             </div>
           </div>
           <div class="window__title_user" *ngFor="let dato of datos">
-            <p>{{dato.titulo}}</p>
+            <p>{{ dato.titulo }}</p>
           </div>
         </div>
         <div class="texto-desc" *ngFor="let dato of datos">
-                  <span>Sobre mi >_</span>
-                  <h4>{{dato.descripcion}}</h4>
-                  <div class="boton-cv">
-                    <a [href]="dato.curriculum" download target="_blank">
-                      <img src="https://res.cloudinary.com/dets0trss/image/upload/v1673388793/investigacion_ib2eke.png" alt="icono.cv"></a>
-                  </div>
-                </div>
-                <div class="boton-agregar">
-                  <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button type="submit" (click)="editarDatos(datos[0])">
-                    <mat-icon color="accent">edit</mat-icon>
-                  </button>
-                  <button class="off-edit" [ngClass]="{'active-edit': usuarioService.enableEdit}" mat-icon-button routerLink="add-datos">
-                    <mat-icon color="accent">add</mat-icon>
-                   </button>
+          <div class="boton-agregar">
+            <button
+              class="off-edit"
+              [ngClass]="{ 'active-edit': usuarioService.enableEdit }"
+              mat-icon-button
+              type="submit"
+              (click)="editarDatos(datos[0])"
+            >
+              <mat-icon color="accent">edit</mat-icon>
+            </button>
+            <button
+              class="off-edit"
+              [ngClass]="{ 'active-edit': usuarioService.enableEdit }"
+              mat-icon-button
+              routerLink="add-datos"
+            >
+              <mat-icon color="accent">add</mat-icon>
+            </button>
+          </div>
+          <span>Sobre mi >_</span>
+          <h4>{{ dato.descripcion }}</h4>
+          <div class="boton-cv">
+            <a [href]="dato.curriculum" download target="_blank">
+              <img
+                src="https://res.cloudinary.com/dets0trss/image/upload/v1673388793/investigacion_ib2eke.png"
+                alt="icono.cv"
+            /></a>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>

@@ -40,7 +40,7 @@ export class AddSkillComponent {
         popup: 'animate__animated animate__fadeOutUp'
       }
     });
-    this.router.navigate(['stack']);
+    this.servHerr.list().subscribe(data => this.router.navigate(['stack']))
     
   }
 }

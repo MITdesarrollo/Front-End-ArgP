@@ -55,6 +55,6 @@ export class AddExpComponent {
         popup: 'animate__animated animate__fadeOutUp'
       }
     });
-    this.router.navigate(['exp']);
+    this.servExp.list().subscribe(data => this.router.navigate(['exp']))
   }
 }

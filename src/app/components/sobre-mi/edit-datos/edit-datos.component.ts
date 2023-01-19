@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/models/persona';
 import { PersonaService } from 'src/app/services/persona.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +20,8 @@ export class EditDatosComponent implements OnInit{
   private form: FormBuilder,
   private router: Router,
   private activateRoute: ActivatedRoute,
-  private servPersona : PersonaService
+  private servPersona : PersonaService,
+  private userServ: UsuarioService
   ){
 
     this.activateRoute.paramMap.subscribe((parametros)=>{
@@ -62,7 +64,9 @@ editarDatos(datos: Persona){
       popup: 'animate__animated animate__fadeOutUp'
     }
   })
-  this.router.navigate(['sobre-mi'])
+  this.userServ.lista().subscribe(data =>{
+    this.router.navigate(['sobre-mi'])
+  })
   }
 }
 
